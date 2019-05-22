@@ -1,0 +1,35 @@
+{
+  "name": "@kyump/final-form-generator",
+  "private": false,
+  "version": "0.0.1",
+  "description": "tool used to build form with react final form",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-final-form",
+    "yup",
+    "react",
+    "hook",
+    "tool"
+  ],
+  "devDependencies": {
+    "final-form": "^4.13.0",
+    "final-form-calculate": "^1.3.1",
+    "final-form-set-field-data": "^1.0.2",
+    "react": "^16.8.6",
+    "react-final-form": "^5.1.0",
+    "yup": "^0.27.0"
+  },
+  "peerDependencies": {
+    "final-form": "^4.13.0",
+    "final-form-calculate": "^1.3.1",
+    "final-form-set-field-data": "^1.0.2",
+    "react": "^16.8.6",
+    "react-final-form": "^5.1.0",
+    "yup": "^0.27.0"
+  },
+  "author": "Guillaume Bastianelli",
+  "license": "ISC"
+}
