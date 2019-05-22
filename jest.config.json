@@ -1,0 +1,9 @@
+{
+	"verbose": true,
+	"testPathIgnorePatterns": [
+		"backoffice-backend/src/common/auth/__tests__/auth.js",
+		"[a-zA-Z_-]*-utils.js",
+		"/*/__tests__/utils.js",
+		"tests-cards.js"
+	]
+}
