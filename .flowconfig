@@ -1,0 +1,19 @@
+[ignore]
+<PROJECT_ROOT>/packages/scripts/local
+<PROJECT_ROOT>/packages/scripts/db/migrations/archived
+<PROJECT_ROOT>/.idea/.*
+
+[include]
+
+[untyped]
+<PROJECT_ROOT>/packages/inspection-app/node_modules/react-native/Libraries/.*
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\FlowFixMe
+
+[strict]

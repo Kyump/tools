@@ -1,0 +1,38 @@
+{
+	"name": "@kyump/final-form-generator-mui-example",
+	"version": "1.9.3",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack --config webpack.prod.config.js",
+		"start-dev": "webpack-dev-server --config webpack.dev.config.js --hot",
+		"build-dev": "webpack --config webpack.dev.config.js",
+		"build-preprod": "webpack --config webpack.preprod.config.js",
+		"build-integration": "webpack --config webpack.integration.config.js",
+		"lint": "eslint .",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@material-ui/core": "4.0.0",
+		"@material-ui/icons": "4.0.0",
+		"babel-polyfill": "6.26.0",
+		"final-form": "4.13.0",
+		"final-form-calculate": "1.3.1",
+		"final-form-set-field-data": "1.0.2",
+		"react": "16.8.6",
+		"react-dom": "16.8.6",
+		"react-final-form": "6.0.0",
+		"yup": "0.27.0"
+	},
+	"devDependencies": {
+		"@kyump/final-form-generator": "^0.0.2-alpha.1",
+		"@kyump/final-form-generator-mui": "^0.0.2-alpha.1"
+	},
+	"resolutions": {
+		"**/react": "16.7.0-alpha.2",
+		"**/react-dom": "16.7.0-alpha.2"
+	}
+}
