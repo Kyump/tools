@@ -115,6 +115,21 @@ const fields = [
 		withPreview: true,
 	},
 	{
+		label: 'Date',
+		type: 'date',
+		name: 'date',
+	},
+	{
+		label: 'Time',
+		type: 'time',
+		name: 'time',
+	},
+	{
+		label: 'datetime',
+		type: 'datetime-local',
+		name: 'datetime',
+	},
+	{
 		type: 'container',
 		name: 'condition-container',
 		Component: Paper,

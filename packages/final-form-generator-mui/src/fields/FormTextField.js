@@ -17,7 +17,14 @@ const parsers = (type: string) => {
 type PropsType = {
 	label: string,
 	name: string,
-	type: 'text' | 'email' | 'number' | 'password',
+	type:
+		| 'text'
+		| 'email'
+		| 'number'
+		| 'password'
+		| 'datetime-local'
+		| 'time'
+		| 'date',
 	style?: Object,
 	variant?: VariantType,
 };
@@ -39,6 +46,9 @@ const FormTextField = ({
 				variant={variant}
 				value={value}
 				style={style}
+				InputLabelProps={{
+					shrink: ['date', 'time', 'datetime-local'].includes(type),
+				}}
 				{...renderPropsRest}
 			/>
 		)}

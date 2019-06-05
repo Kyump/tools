@@ -60,9 +60,9 @@ export type StandardFieldType = $ReadOnly<{|
 		| 'email'
 		| 'number'
 		| 'password'
-		| 'date'
-		| 'datetime'
-		| 'time',
+		| 'datetime-local'
+		| 'time'
+		| 'date',
 	>,
 	variant?: VariantType,
 |}>;
@@ -78,26 +78,6 @@ type SimpleFieldType =
 	| StandardFieldType;
 
 // End of fields
-
-// export type DateSelectFieldType = {
-// 	type: 'date-select' | 'date-time-select',
-// 	value?: string, // les inputs ne veulent pas de boolean ou d'undefined en value
-// 	options: Array<{label: string, value: any}>,
-// } & BasicFieldType;
-//
-// type SimpleFieldType =
-// 	| StandardFieldType
-// 	| SelectFieldType
-// 	| MutliSelectFieldType
-// 	| CheckboxFieldType
-// 	| DateSelectFieldType;
-//
-// type GroupFieldType = {
-// 	type: 'group',
-// 	row?: boolean,
-// 	fields: Array<FieldType>, // eslint-disable-line no-use-before-define
-// } & BasicFieldType;
-//
 
 //
 // Start of containers

@@ -16,21 +16,6 @@ import FormRadioGroup from './FormRadioGroup';
 import FormCheckboxGroup from './FormCheckboxGroup';
 import FormFile from './FormFile';
 import FormCondition from './FormCondition';
-// import FormCondition from './FormCondition';
-// import FormDateField from './FormDate';
-// import FormGroup from './FormGroup';
-// import FormRadio from './FormRadio';
-// import FormSelect from './FormSelect';
-// import FormTextField from './FormTextField';
-// import FormUploadFile from './FormUploadFile';
-// import FormDateSelectField from './FormDateSelectField';
-// import FormTimeField from './FormDatetime';
-// import type {FieldType} from './types';
-// import FormTime from './FormTime';
-// import FormPaper from './FormPaper';
-// import FormMultiSelect from './FormMultiSelect';
-// import FormDateTimeSelectField from './FormDateTimeSelectField';
-// import FormCityField from './FormCityField';
 
 export const defaultValidation = (type?: string) => {
 	switch (type) {
@@ -79,12 +64,6 @@ export const renderInput = ({
 			return <FormMultiSelect key={key} {...field} />;
 		case 'file':
 			return <FormFile key={key} {...field} />;
-		// case 'group':
-		// 	return (
-		// 		<FormGroup key={key} {...field}>
-		// 			{children}
-		// 		</FormGroup>
-		// 	);
 		case 'condition':
 			return (
 				<FormCondition key={key} name={field.name} predicate={field.predicate}>
@@ -97,16 +76,9 @@ export const renderInput = ({
 					{children}
 				</FormContainer>
 			);
-		// case 'date':
-		// 	return <FormDateField key={key} {...field} />;
-		// case 'datetime':
-		// 	return <FormTimeField key={key} {...field} />;
-		// case 'date-select':
-		// 	return <FormDateSelectField key={key} {...field} />;
-		// case 'date-time-select':
-		// 	return <FormDateTimeSelectField key={key} {...field} />;
-		// case 'time':
-		// 	return <FormTime key={key} {...field} />;
+		case 'date':
+		case 'datetime-local':
+		case 'time':
 		case 'text':
 		case 'email':
 		case 'number':
