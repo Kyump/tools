@@ -15,6 +15,7 @@ import FormMultiSelect from './FormMultiSelect';
 import FormRadioGroup from './FormRadioGroup';
 import FormCheckboxGroup from './FormCheckboxGroup';
 import FormFile from './FormFile';
+import FormCondition from './FormCondition';
 // import FormCondition from './FormCondition';
 // import FormDateField from './FormDate';
 // import FormGroup from './FormGroup';
@@ -84,20 +85,18 @@ export const renderInput = ({
 		// 			{children}
 		// 		</FormGroup>
 		// 	);
-		// case 'condition':
-		// 	return (
-		// 		<FormCondition key={key} name={field.name} predicate={field.predicate}>
-		// 			{children}
-		// 		</FormCondition>
-		// 	);
+		case 'condition':
+			return (
+				<FormCondition key={key} name={field.name} predicate={field.predicate}>
+					{children}
+				</FormCondition>
+			);
 		case 'container':
 			return (
 				<FormContainer key={key} {...field}>
 					{children}
 				</FormContainer>
 			);
-		// case 'paper':
-		// 	return <FormPaper {...field}>{children}</FormPaper>;
 		// case 'date':
 		// 	return <FormDateField key={key} {...field} />;
 		// case 'datetime':
@@ -108,8 +107,6 @@ export const renderInput = ({
 		// 	return <FormDateTimeSelectField key={key} {...field} />;
 		// case 'time':
 		// 	return <FormTime key={key} {...field} />;
-		// case 'city':
-		// 	return <FormCityField key={key} {...field} />;
 		case 'text':
 		case 'email':
 		case 'number':

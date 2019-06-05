@@ -24,7 +24,8 @@ type PropsType = {
 	name: string,
 	options: OptionType[],
 	style?: Object,
-	labelPlacement: LabelPlacementTye,
+	labelPlacement?: LabelPlacementTye,
+	row?: boolean,
 };
 
 const FormCheckboxGroup = ({
@@ -32,6 +33,7 @@ const FormCheckboxGroup = ({
 	labelPlacement,
 	name,
 	options,
+	row,
 	style,
 }: PropsType) => {
 	const classes = useStyles();
@@ -45,9 +47,10 @@ const FormCheckboxGroup = ({
 					style={style}
 				>
 					<FormLabel component="legend">{label}</FormLabel>
-					<FormGroup className={classes.group}>
+					<FormGroup className={classes.group} row={row}>
 						{options.map(({label: optionLabel, value: optionValue}) => (
 							<FormCheckbox
+								key={`${name}-option-${optionValue}`}
 								name={name}
 								label={optionLabel}
 								labelPlacement={labelPlacement}
