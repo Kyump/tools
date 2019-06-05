@@ -2,13 +2,14 @@
 import React from 'react';
 import * as Yup from 'yup';
 import FinalFormGenerator from '@kyump/final-form-generator-mui';
+import Paper from '@material-ui/core/Paper';
 
 type PropsType = {columns: number};
 
 const SMALL_FORM = [
 	{
 		type: 'text',
-		name: 'bite',
+		name: 'text',
 		label: 'text',
 	},
 	{
@@ -112,6 +113,66 @@ const fields = [
 		type: 'file',
 		name: 'fileToUploadWithPreview',
 		withPreview: true,
+	},
+	{
+		type: 'container',
+		name: 'condition-container',
+		Component: Paper,
+		fields: [
+			{
+				label: 'Select condition',
+				type: 'radio-group',
+				name: 'conditionRadio',
+				validation: Yup.string().required(),
+				row: true,
+				options: [
+					{
+						label: 'Condition 1',
+						value: 'CONDITION_1',
+					},
+					{
+						label: 'Condition 2',
+						value: 'CONDITION_2',
+					},
+				],
+			},
+			{
+				name: 'conditionRadio',
+				type: 'condition',
+				predicate: conditionRadio => conditionRadio === 'CONDITION_1',
+				fields: [
+					{
+						type: 'text',
+						name: 'textCondition1',
+						label: 'text for condition 1',
+						validation: Yup.string().when('conditionRadio', {
+							is: conditionRadio => conditionRadio === 'CONDITION_1',
+							then: Yup.string().required(
+								'Required cause conditionRadio === CONDITION_1',
+							),
+						}),
+					},
+				],
+			},
+			{
+				name: 'conditionRadio',
+				type: 'condition',
+				predicate: conditionRadio => conditionRadio === 'CONDITION_2',
+				fields: [
+					{
+						type: 'text',
+						name: 'textCondition2',
+						label: 'text for condition 2',
+						validation: Yup.string().when('conditionRadio', {
+							is: conditionRadio => conditionRadio === 'CONDITION_2',
+							then: Yup.string().required(
+								'Required cause conditionRadio === CONDITION_2',
+							),
+						}),
+					},
+				],
+			},
+		],
 	},
 ];
 

@@ -24,13 +24,16 @@ type PropsType = {
 	label: string,
 	name: string,
 	options: OptionType[],
+	labelPlacement?: LabelPlacementTye,
+	row?: boolean,
 	style?: Object,
-	labelPlacement: LabelPlacementTye,
 };
 
 const FormRadioGroup = ({
 	label,
 	labelPlacement = 'end',
+	row,
+	style,
 	options,
 	...props
 }: PropsType) => {
@@ -47,18 +50,21 @@ const FormRadioGroup = ({
 					className={classes.formControl}
 					{...rest}
 					error={meta.error && meta.touched}
+					style={style}
 				>
 					<FormLabel component="legend">{label}</FormLabel>
 					<RadioGroup
+						{...restInput}
 						aria-label={name}
 						className={classes.group}
 						name={name}
-						value={value}
 						onChange={onChange}
-						{...restInput}
+						row={row}
+						value={value}
 					>
 						{options.map(({label: optionLabel, value: optionValue}) => (
 							<FormControlLabel
+								key={`${name}-radio-${optionValue}`}
 								value={optionValue}
 								control={<Radio color="primary" />}
 								label={optionLabel}

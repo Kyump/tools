@@ -21,6 +21,7 @@ export type CheckboxGroupFieldType = $ReadOnly<{|
 	...BasicInputType<'checkbox-group'>,
 	options: OptionType[],
 	labelPlacement?: LabelPlacementTye,
+	row?: boolean,
 |}>;
 export type FileFieldType = $ReadOnly<{|
 	...BasicInputType<'file'>,
@@ -41,6 +42,7 @@ export type RadioGroupFieldType = $ReadOnly<{|
 	...BasicInputType<'radio-group'>,
 	options: OptionType[],
 	labelPlacement?: LabelPlacementTye,
+	row?: boolean,
 |}>;
 
 export type SelectFieldType = $ReadOnly<{|
@@ -96,22 +98,20 @@ type SimpleFieldType =
 // 	fields: Array<FieldType>, // eslint-disable-line no-use-before-define
 // } & BasicFieldType;
 //
-// type ConditionType = {
-// 	type: 'condition',
-// 	name: string,
-// 	predicate: (value: any) => boolean,
-// 	fields: Array<FieldType>, // eslint-disable-line no-use-before-define
-// };
-//
 
 //
 // Start of containers
 export type ContainerType = $ReadOnly<{|
 	...BasicContainerType<'container'>,
+	Component?: React$Node,
 	columns?: number,
 |}>;
 
-type GroupFieldType = ContainerType;
+type ConditionType = {|
+	...BasicContainerType<'condition'>,
+	predicate: (value: any) => boolean,
+|};
+type GroupFieldType = ContainerType | ConditionType;
 // End of containers
 
 export type FieldType = SimpleFieldType | GroupFieldType;
