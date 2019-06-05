@@ -12,11 +12,6 @@ const SMALL_FORM = [
 		label: 'text',
 	},
 	{
-		type: 'phone',
-		name: 'phone',
-		label: 'phone',
-	},
-	{
 		type: 'email',
 		name: 'email',
 		label: 'email',
@@ -36,36 +31,87 @@ const SMALL_FORM = [
 const fields = [
 	...SMALL_FORM,
 	{
+		type: 'container',
+		fields: SMALL_FORM,
+		name: 'simple-container',
+		label: 'Container',
+		columns: 2,
+	},
+	{
 		type: 'checkbox',
 		name: 'simpleCheckbox',
 		label: 'Simple checkbox',
 	},
 	{
 		label: 'Multiple checkbox',
-		type: 'container',
+		type: 'checkbox-group',
 		name: 'multipleCheckBox',
 		validation: Yup.array(Yup.string()).required(),
-		fields: [
+		options: [
 			{
 				label: 'Choice 1',
-				name: 'multipleCheckBox',
-				type: 'checkbox',
 				value: 'CHOICE_1',
 			},
 			{
 				label: 'Choice 2',
-				name: 'multipleCheckBox',
-				type: 'checkbox',
 				value: 'CHOICE_2',
 			},
+		],
+	},
+	{
+		type: 'radio',
+		name: 'simpleRadio',
+		label: 'Simple radio',
+	},
+	{
+		label: 'Multiple radio',
+		type: 'radio-group',
+		name: 'multipleRadio',
+		validation: Yup.string().required(),
+		options: [
 			{
-				type: 'container',
-				fields: SMALL_FORM,
-				name: 'simple-container',
-				label: 'Container',
-				columns: 2,
+				label: 'Choice 1',
+				value: 'CHOICE_1',
+			},
+			{
+				label: 'Choice 2',
+				value: 'CHOICE_2',
 			},
 		],
+	},
+	{
+		label: 'Select',
+		type: 'select',
+		name: 'simpleSelect',
+		validation: Yup.string().required(),
+		options: [
+			{label: 'Choice 1', value: 'CHOICE_1'},
+			{label: 'Choice 2', value: 'CHOICE_2'},
+			{label: 'Choice 3', value: 'CHOICE_3'},
+		],
+	},
+	{
+		label: 'Multiple Select',
+		type: 'multi-select',
+		name: 'multiSelect',
+		validation: Yup.array(Yup.string()).required(),
+		options: [
+			{label: 'Choice 1', value: 'CHOICE_1'},
+			{label: 'Choice 2', value: 'CHOICE_2'},
+			{label: 'Choice 3', value: 'CHOICE_3'},
+		],
+	},
+	{
+		label: 'File to upload',
+		type: 'file',
+		name: 'fileToUpload',
+		withPreview: true,
+	},
+	{
+		label: 'File to upload with preview',
+		type: 'file',
+		name: 'fileToUploadWithPreview',
+		withPreview: true,
 	},
 ];
 

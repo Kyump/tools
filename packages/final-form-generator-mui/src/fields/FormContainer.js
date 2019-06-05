@@ -4,11 +4,10 @@ import {makeStyles} from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 
 type PropsType = {
+	label: string,
 	children: Node,
-	label?: string,
 	columns?: number,
 	style?: Object,
-	Component?: React$ElementType,
 };
 
 type StyleProps = {|
@@ -39,11 +38,10 @@ const FormContainer = ({
 	style,
 	// FlowFixMe flow doesn't tolerate his own type
 	Component = 'div',
-	...others
 }: PropsType) => {
 	const classes = useStyles({columns});
 	return (
-		<Component {...others} className={classes.container} style={style}>
+		<Component className={classes.container} style={style}>
 			{label && (
 				<Typography
 					color="textSecondary"

@@ -4,12 +4,17 @@ import * as Yup from 'yup';
 import stringHash from 'string-hash';
 import Button from '@material-ui/core/Button';
 
-import type {RenderSubmitParamsType} from '../types';
+import type {FieldType, RenderSubmitParamsType} from '../types';
 
 import FormCheckbox from './FormCheckbox';
 import FormContainer from './FormContainer';
 import FormTextField from './FormTextField';
-import type {FieldType} from './types';
+import FormRadio from './FormRadio';
+import FormSelect from './FormSelect';
+import FormMultiSelect from './FormMultiSelect';
+import FormRadioGroup from './FormRadioGroup';
+import FormCheckboxGroup from './FormCheckboxGroup';
+import FormFile from './FormFile';
 // import FormCondition from './FormCondition';
 // import FormDateField from './FormDate';
 // import FormGroup from './FormGroup';
@@ -30,22 +35,22 @@ export const defaultValidation = (type?: string) => {
 	switch (type) {
 		case 'container':
 			return undefined;
+		case 'date':
+			return Yup.date().required();
 		case 'email':
 			return Yup.string()
-				.email("L'adresse mail n'est pas valide.")
-				.required("L'adresse mail est obligatoire");
-		case 'date':
-			return Yup.date("La date n'est pas valide.").required(
-				'La date est obligatoire.',
-			);
+				.email()
+				.required();
+		case 'file':
+			return Yup.object().required();
 		case 'multi-select':
 			return Yup.array()
 				.of(Yup.string())
-				.required('Le champ est requis.');
+				.required();
 		default:
 			return Yup.string()
 				.trim()
-				.required('Le champ est requis.');
+				.required();
 	}
 };
 
@@ -57,19 +62,22 @@ export const renderInput = ({
 	children?: Array<React$Node>,
 }): React$Node => {
 	// eslint-disable-line complexity
-	// FlowFixMe i know what i m doing
 	const key = `${field.type}-${stringHash(field.label || field.name)}`;
 	switch (field.type) {
-		// case 'radio':
-		// 	return <FormRadio key={key} {...field} />;
+		case 'radio':
+			return <FormRadio key={key} {...field} />;
+		case 'radio-group':
+			return <FormRadioGroup key={key} {...field} />;
 		case 'checkbox':
 			return <FormCheckbox key={key} {...field} />;
-		// case 'select':
-		// 	return <FormSelect key={key} {...field} />;
-		// case 'multi-select':
-		// 	return <FormMultiSelect key={key} {...field} />;
-		// case 'file':
-		// 	return <FormUploadFile key={key} {...field} />;
+		case 'checkbox-group':
+			return <FormCheckboxGroup key={key} {...field} />;
+		case 'select':
+			return <FormSelect key={key} {...field} />;
+		case 'multi-select':
+			return <FormMultiSelect key={key} {...field} />;
+		case 'file':
+			return <FormFile key={key} {...field} />;
 		// case 'group':
 		// 	return (
 		// 		<FormGroup key={key} {...field}>
@@ -83,7 +91,11 @@ export const renderInput = ({
 		// 		</FormCondition>
 		// 	);
 		case 'container':
-			return <FormContainer {...field}>{children}</FormContainer>;
+			return (
+				<FormContainer key={key} {...field}>
+					{children}
+				</FormContainer>
+			);
 		// case 'paper':
 		// 	return <FormPaper {...field}>{children}</FormPaper>;
 		// case 'date':
@@ -99,10 +111,10 @@ export const renderInput = ({
 		// case 'city':
 		// 	return <FormCityField key={key} {...field} />;
 		case 'text':
-		case 'phone':
 		case 'email':
 		case 'number':
 		case 'password':
+			// $FlowFixMe TODO check this at the end
 			return <FormTextField key={key} {...field} />;
 		default:
 			return <span key={key}>{`${field.type} not handled`}</span>;

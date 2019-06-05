@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
@@ -23,6 +22,7 @@ const useStyles = makeStyles(theme => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		height: '100%',
+		overflow: 'auto',
 	},
 	formControl: {
 		margin: theme.spacing(3),
@@ -30,9 +30,6 @@ const useStyles = makeStyles(theme => ({
 	group: {
 		margin: theme.spacing(1, 0),
 		flexDirection: 'row',
-	},
-	divider: {
-		width: '100%',
 	},
 }));
 
@@ -84,7 +81,6 @@ function App() {
 						/>
 					</RadioGroup>
 				</FormControl>
-				<Divider className={classes.divider} />
 				<FormExample columns={Number(columns)} />
 			</Container>
 		</div>

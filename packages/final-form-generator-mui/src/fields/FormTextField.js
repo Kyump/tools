@@ -1,28 +1,35 @@
 // @flow
 import React from 'react';
 import {Field} from 'react-final-form';
-
 import TextField from '@material-ui/core/TextField';
 
-const parsers = {
-	number: value => Number(value),
+import type {VariantType} from '../types';
+
+const parsers = (type: string) => {
+	switch (type) {
+		case 'number':
+			return value => Number(value);
+		default:
+			return value => value;
+	}
 };
 
 type PropsType = {
-	type: string,
 	label: string,
 	name: string,
-	variant?: string,
+	type: 'text' | 'email' | 'number' | 'password',
+	style?: Object,
+	variant?: VariantType,
 };
 
 const FormTextField = ({
 	label,
+	type,
 	variant = 'outlined',
 	name,
-	type,
-	...rest
+	style,
 }: PropsType) => (
-	<Field name={name} type={type} label={label} parse={parsers[type]} {...rest}>
+	<Field name={name} type={type} label={label} parse={parsers(type)}>
 		{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => (
 			<TextField
 				inputProps={restInput}
@@ -31,6 +38,7 @@ const FormTextField = ({
 				helperText={meta.touched ? meta.error : undefined}
 				variant={variant}
 				value={value}
+				style={style}
 				{...renderPropsRest}
 			/>
 		)}

@@ -28,7 +28,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^2.0.2",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^2.1.1",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0",
@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "flow-bin": "^0.99.0",
+    "flow-bin": "^0.100.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^2.3.0",
     "jest": "24.8.0",
@@ -54,9 +54,9 @@
     "prettier": "1.17.1",
     "rimraf": "2.6.3",
     "style-loader": "0.23.1",
-    "webpack": "4.32.2",
+    "webpack": "4.33.0",
     "webpack-cli": "3.3.2",
-    "webpack-dev-server": "^3.4.1",
+    "webpack-dev-server": "^3.5.1",
     "webpack-merge": "^4.2.1"
   },
   "husky": {
@@ -76,7 +76,12 @@
   "dependencies": {},
   "scripts": {
     "start-mui-example": "webpack-dev-server --config packages/final-form-generator-mui-example/webpack.dev.config.js --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "//////": "check",
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
+    "flow": "flow check --color=always --show-all-errors",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "ultra-check": "npm run lint && npm run flow && npm run test"
   },
   "repository": {
     "type": "git",

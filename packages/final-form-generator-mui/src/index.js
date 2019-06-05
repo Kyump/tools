@@ -16,14 +16,14 @@ type StylePropsType = {
 	columns: number,
 	rows: number,
 };
-export const useStyles = makeStyles({
+export const useStyles = makeStyles(theme => ({
 	inputContainer: {
 		width: '100%',
 		display: 'grid',
 		gridTemplateColumns: ({columns}: StylePropsType) => '1fr '.repeat(columns),
 		gridTemplateRows: ({rows}: StylePropsType) => '1fr '.repeat(rows),
-		gridColumnGap: '8px',
-		gridRowGap: '8px',
+		gridColumnGap: theme.spacing(1),
+		gridRowGap: theme.spacing(1),
 		'& > *': {
 			width: 'auto',
 		},
@@ -33,7 +33,7 @@ export const useStyles = makeStyles({
 		alignSelf: 'end',
 		gridColumnEnd: ({columns}: PropsType) => (columns || 1) + 1,
 	},
-});
+}));
 
 const formatJson = data => JSON.stringify(data, null, 2);
 

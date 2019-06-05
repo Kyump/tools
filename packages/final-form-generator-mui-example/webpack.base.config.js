@@ -1,7 +1,7 @@
 /*eslint-disable*/
 
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const CleanWebpackPluginConfig = new CleanWebpackPlugin();
@@ -113,6 +113,7 @@ const config = {
 		alias: {
 			react: path.resolve('./packages/final-form-generator-mui-example/node_modules/react'),
 			'react-dom': path.resolve('./packages/final-form-generator-mui-example/node_modules/react-dom'),
+			'@material-ui': path.resolve('./packages/final-form-generator-mui-example/node_modules/@material-ui'),
 		},
 	},
 	plugins: [CleanWebpackPluginConfig, HtmlWebpackPluginConfig],

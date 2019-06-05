@@ -1,25 +1,26 @@
 // @flow
 import React from 'react';
 import {Field} from 'react-final-form';
-import Checkbox from '@material-ui/core/Checkbox';
+import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 type PropsType = {
 	label: string,
 	name: string,
-	style?: Object,
 	type?: string,
+	style?: Object,
 };
 
-const FormCheckbox = ({label, type, ...props}: PropsType) => (
-	<Field type="checkbox" {...props}>
-		{({input: {name, onChange, ...restInput}, ...rest}) => (
+const FormRadio = ({label, type, ...props}: PropsType) => (
+	<Field type="radio" {...props}>
+		{({input: {checked, value, name, onChange, ...restInput}, ...rest}) => (
 			<FormControlLabel
 				control={
-					<Checkbox
+					<Radio
+						value={value}
 						name={name}
 						color="primary"
-						onChange={onChange}
+						onChange={event => onChange && onChange(event)}
 						inputProps={restInput}
 						{...rest}
 					/>
@@ -30,4 +31,4 @@ const FormCheckbox = ({label, type, ...props}: PropsType) => (
 	</Field>
 );
 
-export default FormCheckbox;
+export default FormRadio;

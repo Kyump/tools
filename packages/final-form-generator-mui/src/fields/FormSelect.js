@@ -1,0 +1,72 @@
+// @flow
+import React from 'react';
+import {Field} from 'react-final-form';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+
+import type {OptionType, VariantType} from '../types';
+
+import {renderMuiOption, renderNativeOption} from './utils/select-utils';
+import {useSelect} from './utils/select-hook';
+
+type PropsType = {
+	label: string,
+	name: string,
+	options: OptionType[],
+	native?: boolean,
+	style?: Object,
+	variant?: VariantType,
+};
+
+const FormSelect = ({
+	label,
+	variant = 'outlined',
+	options,
+	name,
+	native,
+}: PropsType) => {
+	const {inputLabel, InputComponent, labelWidth, renderOption} = useSelect({
+		native,
+		variant,
+		renderMuiOption,
+		renderNativeOption,
+	});
+	return (
+		<Field name={name} label={label}>
+			{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => (
+				<FormControl
+					error={meta.error && meta.touched}
+					variant={variant}
+					{...renderPropsRest}
+				>
+					<InputLabel ref={inputLabel} htmlFor={name}>
+						{label}
+					</InputLabel>
+					<Select
+						native={native}
+						value={value}
+						onChange={onChange}
+						input={
+							<InputComponent
+								name={name}
+								labelWidth={labelWidth}
+								id={name}
+								{...restInput}
+							/>
+						}
+					>
+						<option value="" />
+						{options.map(renderOption)}
+					</Select>
+					{meta.error && meta.touched && (
+						<FormHelperText>{meta.error}</FormHelperText>
+					)}
+				</FormControl>
+			)}
+		</Field>
+	);
+};
+
+export default FormSelect;

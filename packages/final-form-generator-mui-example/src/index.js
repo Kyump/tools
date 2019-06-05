@@ -5,7 +5,7 @@ import {createMuiTheme} from '@material-ui/core';
 import App from './App';
 
 ReactDOM.render(
-	<ThemeProvider theme={createMuiTheme()}>
+	<ThemeProvider theme={createMuiTheme({})}>
 		<App />
 	</ThemeProvider>,
 	document.getElementById('root'),

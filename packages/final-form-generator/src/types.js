@@ -21,9 +21,6 @@ export type BasicFieldType<T: string> = {|
 export type BasicInputType<T: string> = $ReadOnly<{|
 	...BasicFieldType<T>,
 	label: string, // un input DOIT avoir un label
-	updates?: {
-		[string]: (value: any, allValues: Object) => any,
-	},
 |}>;
 
 // eslint-disable-next-line no-use-before-define
