@@ -6,6 +6,16 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	"keywords": [
+		"mui",
+		"material ui",
+		"final-form",
+		"react-final-form",
+		"yup",
+		"react",
+		"hook",
+		"tool"
+	],
 	"author": "Guillaume Bastianelli",
 	"license": "MIT",
 	"devDependencies": {
