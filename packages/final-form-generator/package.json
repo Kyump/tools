@@ -1,6 +1,6 @@
 {
 	"name": "@kyump/final-form-generator",
-	"version": "0.0.2-alpha.1",
+	"version": "0.1.0",
 	"description": "tool used to build form with react final form",
 	"main": "src/index.js",
 	"scripts": {
