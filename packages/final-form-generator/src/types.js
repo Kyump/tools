@@ -40,3 +40,9 @@ export type UseFinalFormGeneratorPropsType = {
 		children?: Array<React$Node>,
 	}) => React$Node,
 };
+
+export type UseFinalFormGeneratorResultType = {
+	dom: React$Node[],
+	// decorators: Object[],
+	validate: (values: Object) => Object,
+};

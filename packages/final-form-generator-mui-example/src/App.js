@@ -1,14 +1,15 @@
 // @flow
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 import Typography from '@material-ui/core/Typography';
-import FormExample from './FormExample';
+
+import FormExample from './components/FormExample';
+import ColumnSelector from './components/ColumnSelector';
+import FormSelector from './components/FormSelector';
+import CustomFormExample from './components/CustomFormExample';
 
 const useStyles = makeStyles(theme => ({
 	container: {
@@ -33,12 +34,27 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
+const getForm = (form, columns) => {
+	switch (form) {
+		case 'CUSTOM':
+			return <CustomFormExample columns={Number(columns)} />;
+		default:
+			return <FormExample columns={Number(columns)} />;
+	}
+};
+
 function App() {
 	const classes = useStyles();
 	const [columns, setColumns] = useState('2');
 
-	function handleChange(event) {
+	function handleColumnChange(event) {
 		setColumns(event.target.value);
+	}
+
+	const [form, setForm] = useState('SIMPLE');
+
+	function handleFormChange(event) {
+		setForm(event.target.value);
 	}
 
 	return (
@@ -48,40 +64,19 @@ function App() {
 				<Typography variant="h4" color="primary" align="center">
 					Final Form Generator MUI Example
 				</Typography>
-				<FormControl component="fieldset" className={classes.formControl}>
-					<RadioGroup
-						name="Column Number"
-						className={classes.group}
+				<Box>
+					<ColumnSelector
+						classes={classes}
+						onChange={handleColumnChange}
 						value={columns}
-						onChange={handleChange}
-					>
-						<FormControlLabel
-							value="1"
-							control={<Radio color="primary" />}
-							label="1 column"
-							labelPlacement="end"
-						/>
-						<FormControlLabel
-							value="2"
-							control={<Radio color="primary" />}
-							label="2 columns"
-							labelPlacement="end"
-						/>
-						<FormControlLabel
-							value="3"
-							control={<Radio color="primary" />}
-							label="3 columns"
-							labelPlacement="end"
-						/>
-						<FormControlLabel
-							value="4"
-							control={<Radio color="primary" />}
-							label="4 columns"
-							labelPlacement="end"
-						/>
-					</RadioGroup>
-				</FormControl>
-				<FormExample columns={Number(columns)} />
+					/>
+					<FormSelector
+						classes={classes}
+						onChange={handleFormChange}
+						value={form}
+					/>
+				</Box>
+				{getForm(form, columns)}
 			</Container>
 		</div>
 	);

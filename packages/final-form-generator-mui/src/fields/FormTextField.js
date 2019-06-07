@@ -47,7 +47,8 @@ const FormTextField = ({
 				value={value}
 				style={style}
 				InputLabelProps={{
-					shrink: ['date', 'time', 'datetime-local'].includes(type),
+					shrink:
+						['date', 'time', 'datetime-local'].includes(type) || undefined,
 				}}
 				{...renderPropsRest}
 			/>

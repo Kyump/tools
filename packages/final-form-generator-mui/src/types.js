@@ -105,8 +105,8 @@ export type RenderSubmitParamsType = {
 	classes: Object,
 };
 
-export type PropsType = {
-	fields: $ReadOnlyArray<FieldType>,
+export type MuiFormPropsType<T> = {
+	fields: $ReadOnlyArray<T>,
 	onSubmit: (values: Object) => any,
 	initialValues?: Object,
 	update?: Object,
@@ -120,3 +120,16 @@ export type PropsType = {
 	preValidate?: (values: Object) => Object,
 };
 // End of components props
+
+// Start of hook props
+export type UseMuiFinalFormGeneratorPropsType<T> = {
+	customDefaultValidation: (name: string) => ?Object,
+	+fields: $ReadOnlyArray<T>,
+	customValidationSchema?: Object,
+	preValidate: (values: Object) => {[string]: string},
+	customRenderInput: (params: {
+		field: T,
+		children?: Array<React$Node>,
+	}) => ?React$Node,
+};
+// End of hook props

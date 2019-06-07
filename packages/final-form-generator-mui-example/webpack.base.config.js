@@ -114,6 +114,8 @@ const config = {
 			react: path.resolve('./packages/final-form-generator-mui-example/node_modules/react'),
 			'react-dom': path.resolve('./packages/final-form-generator-mui-example/node_modules/react-dom'),
 			'@material-ui': path.resolve('./packages/final-form-generator-mui-example/node_modules/@material-ui'),
+			'final-form': path.resolve('./packages/final-form-generator-mui-example/node_modules/final-form'),
+			'react-final-form': path.resolve('./packages/final-form-generator-mui-example/node_modules/react-final-form'),
 		},
 	},
 	plugins: [CleanWebpackPluginConfig, HtmlWebpackPluginConfig],
