@@ -3,12 +3,8 @@
 	"version": "0.1.0",
 	"description": "",
 	"main": "index.js",
+	"private": true,
 	"scripts": {
-		"build": "webpack --config webpack.prod.config.js",
-		"start-dev": "webpack-dev-server --config webpack.dev.config.js --hot",
-		"build-dev": "webpack --config webpack.dev.config.js",
-		"build-preprod": "webpack --config webpack.preprod.config.js",
-		"build-integration": "webpack --config webpack.integration.config.js",
 		"lint": "eslint .",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -35,5 +31,6 @@
 	"resolutions": {
 		"**/react": "16.7.0-alpha.2",
 		"**/react-dom": "16.7.0-alpha.2"
-	}
+	},
+	"gitHead": "fe9bb099602461b58441fb7f02996196faeed9e4"
 }

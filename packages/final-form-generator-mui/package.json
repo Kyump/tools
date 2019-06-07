@@ -40,5 +40,6 @@
 	},
 	"dependencies": {
 		"string-hash": "^1.1.3"
-	}
+	},
+	"gitHead": "fe9bb099602461b58441fb7f02996196faeed9e4"
 }

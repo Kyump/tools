@@ -38,5 +38,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"lodash.topath": "^4.5.2"
-	}
+	},
+	"gitHead": "fe9bb099602461b58441fb7f02996196faeed9e4"
 }
