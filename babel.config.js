@@ -38,6 +38,6 @@ module.exports = function(api) {
 			['@babel/plugin-proposal-class-properties', {loose: false}],
 			'@babel/plugin-proposal-json-strings',
 		],
-		babelrcRoots: ['.', 'packages/*'],
+		babelrcRoots: ['.', '.packages/*'],
 	};
 };
