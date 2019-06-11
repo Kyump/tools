@@ -91,8 +91,9 @@
     "flow": "flow check --color=always --show-all-errors",
     "test": "echo \"Error: no test specified\" && exit 0",
     "ultra-check": "npm run lint && npm run flow && npm run test",
-    "clean": "rimraf dist",
+    "clean": "rimraf node_modules",
     "build0": "rollup --config --environment FORMAT:es",
+    "validate": "nps validate",
     "build": "lerna exec --parallel -- npm run build"
   },
   "repository": {

@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import {Form as FinalForm} from 'react-final-form';
-import setFieldData from 'final-form-set-field-data';
 import {makeStyles} from '@material-ui/styles';
 
 import {renderSimpleSubmit} from './fields/utils';
@@ -62,7 +61,6 @@ const FormComponent = ({
 		<FinalForm
 			validate={validate}
 			onSubmit={onSubmit}
-			mutators={{setFieldData}}
 			initialValues={initialValues}
 			render={({
 				handleSubmit,

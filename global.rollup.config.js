@@ -45,7 +45,9 @@ export function generateConfig(optional) {
 		external: optional.external || [],
 		plugins: [
 			resolve({mainFields: ['jsnext:main']}),
-			commonjs({include: 'node_modules/**'}),
+			commonjs({
+				include: 'node_modules/**',
+			}),
 			babel({
 				rootMode: 'upward',
 				exclude: 'node_modules/**',

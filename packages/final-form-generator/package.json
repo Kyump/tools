@@ -9,8 +9,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "nps build",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "nps build"
 	},
 	"keywords": [
 		"final-form",
@@ -26,7 +25,6 @@
 	"peerDependencies": {
 		"final-form": "^4.13.0",
 		"final-form-calculate": "^1.3.1",
-		"final-form-set-field-data": "^1.0.2",
 		"react": "^16.8.6",
 		"react-final-form": "^6.0.0",
 		"yup": "^0.27.0"
@@ -34,7 +32,6 @@
 	"devDependencies": {
 		"final-form": "^4.13.0",
 		"final-form-calculate": "^1.3.1",
-		"final-form-set-field-data": "^1.0.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-final-form": "^6.0.0",
