@@ -38,11 +38,12 @@ const fields = [
     },
 ];
 
-const renderInput = ({field, children = []}) => {
+const renderInput = ({field, children = [], index}) => {
     switch (field.type) {
         case 'email':
             return (
                 <Field
+                key={index}
                     name={field.name}
                     component="input"
                     type="email"
@@ -52,6 +53,7 @@ const renderInput = ({field, children = []}) => {
         case 'text':
             return (
                 <Field
+                    key={index}
                     name={field.name}
                     component="input"
                     type="text"
@@ -120,7 +122,7 @@ export default ExampleForm;
 
 - defaultValidation (**required**): Function the take type of the field and return its default [yup](https://github.com/jquense/yup) validation
 - fields (**required**): Array of [fields](src/types.js#L6-L14)
-- renderInput (**required**): Function used to render elements of the form. It takes an object with 2 props *field* ([BasicFieldInterface]( src/types.js#L6-L14)) and its *children* (?React$Node[])
+- renderInput (**required**): Function used to render elements of the form. It takes an object with 3 props *field* ([BasicFieldInterface]( src/types.js#L6-L14)), its *children* (?React$Node[]) and the index of the field in the fields array
 - customValidationSchema?: Yup base schema is you want to use noSortEdges for example.
 
 ```javascript

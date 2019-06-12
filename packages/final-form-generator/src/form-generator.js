@@ -31,7 +31,7 @@ const computeForm = ({
 	defaultValidation,
 }) =>
 	fields.reduce(
-		(acc, field) => {
+		(acc, field, index) => {
 			// If the inputs is a group we need to traverse it
 			if (field.fields) {
 				const {
@@ -46,13 +46,13 @@ const computeForm = ({
 				});
 
 				// We render the current group elemuserresoent with the computed children elements
-				acc.dom.push(renderInput({field, children: childrenDom}));
+				acc.dom.push(renderInput({field, children: childrenDom, index}));
 				// Merge the conf of all children with the conf of the current depth level
 				acc.schema = acc.schema.concat(childrenSchema);
 				acc.decorators = [...acc.decorators, ...childrenDecorators];
 			} else {
 				// If it's not a group we just push the input into the dom
-				acc.dom.push(renderInput({field}));
+				acc.dom.push(renderInput({field, index}));
 			}
 
 			if (field.validation || defaultValidation(field.type)) {

@@ -43,12 +43,14 @@ export const defaultValidation = (type?: string) => {
 export const renderInput = ({
 	field,
 	children = [],
+	index,
 }: {
 	+field: FieldType,
 	children?: Array<React$Node>,
+	index: number,
 }): React$Node => {
 	// eslint-disable-line complexity
-	const key = `${field.type}-${stringHash(field.label || field.name)}`;
+	const key = `${field.type}-${stringHash(field.label || field.name)}-${index}`;
 	switch (field.type) {
 		case 'radio':
 			return <FormRadio key={key} {...field} />;

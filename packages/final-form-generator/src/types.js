@@ -42,6 +42,7 @@ export type UseFinalFormGeneratorPropsType = {
 	renderInput: (params: {
 		field: BasicFieldInterface,
 		children?: Array<React$Node>,
+		index: number,
 	}) => React$Node,
 };
 
