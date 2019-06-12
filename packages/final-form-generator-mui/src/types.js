@@ -109,11 +109,10 @@ export type MuiFormPropsType<T> = {
 	fields: $ReadOnlyArray<T>,
 	onSubmit: (values: Object) => any,
 	initialValues?: Object,
-	update?: Object,
-	// i dont get it, thoses props are used in STYLE
-	columns?: number, // eslint-disable-line react/no-unused-prop-types
-	rows?: number, // eslint-disable-line react/no-unused-prop-types
+	columns?: number,
+	rows?: number,
 	renderSubmit?: (params: RenderSubmitParamsType) => React$Element<*>,
+	preValidate: (values: Object) => {[string]: string},
 	devMode?: boolean,
 	children?: React$Element<any>,
 	customValidationSchema?: Object,
@@ -130,6 +129,7 @@ export type UseMuiFinalFormGeneratorPropsType<T> = {
 	customRenderInput: (params: {
 		field: T,
 		children?: Array<React$Node>,
+		index: number,
 	}) => ?React$Node,
 };
 // End of hook props

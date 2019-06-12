@@ -116,7 +116,7 @@ const ExampleForm = () => {
 export default ExampleForm;
 ```
 
-### API
+## API
 
 [UseFinalFormGeneratorProps](src/types.js#L37-L46) :
 
@@ -131,7 +131,7 @@ const customValidationSchema = Yup.object().shape({
 });
 ```
 Here, if you put validation on field email or phone it will be add to this shape.
-- preValidate: Function than can be called before yup validation. It has the form values as param and should return an object with error message (```{[string]: string}``)
+- preValidate: Function than can be called before yup validation. It has the form values as param and should return an object with error message (```{[string]: string}```)
 
 
 [UseFinalFormGeneratorResult](src/types.js#L48-L53) :

@@ -18,9 +18,8 @@ export type PropsType = {
 	decorators: Decorator[],
 	onSubmit: (values: Object) => any,
 	initialValues?: Object,
-	// i dont get it, thoses props are used in STYLE
-	columns?: number, // eslint-disable-line react/no-unused-prop-types
-	rows?: number, // eslint-disable-line react/no-unused-prop-types
+	columns?: number,
+	rows?: number,
 	renderSubmit?: (params: RenderSubmitParamsType) => React$Element<*>,
 	devMode?: boolean,
 	children?: React$Element<any>,
