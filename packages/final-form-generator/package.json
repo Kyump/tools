@@ -1,6 +1,6 @@
 {
 	"name": "@kyump/final-form-generator",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "tool used to build form with react final form",
 	"main": "dist/final-form-generator.cjs.js",
 	"jsnext:main": "dist/final-form-generator.es.js",
