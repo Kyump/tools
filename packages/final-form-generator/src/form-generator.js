@@ -3,6 +3,7 @@
 import React, {useEffect, useState} from 'react';
 import * as Yup from 'yup';
 import {setIn} from 'final-form';
+import createDecorator from 'final-form-calculate';
 
 import {setValidation} from './utils';
 import type {
@@ -36,7 +37,7 @@ const computeForm = ({
 				const {
 					dom: childrenDom,
 					schema: childrenSchema,
-					// decorators: childrenDecorators,
+					decorators: childrenDecorators,
 				} = computeForm({
 					fields: field.fields,
 					renderInput,
@@ -48,7 +49,7 @@ const computeForm = ({
 				acc.dom.push(renderInput({field, children: childrenDom}));
 				// Merge the conf of all children with the conf of the current depth level
 				acc.schema = acc.schema.concat(childrenSchema);
-				// acc.decorators = [...acc.decorators, ...childrenDecorators];
+				acc.decorators = [...acc.decorators, ...childrenDecorators];
 			} else {
 				// If it's not a group we just push the input into the dom
 				acc.dom.push(renderInput({field}));
@@ -62,13 +63,22 @@ const computeForm = ({
 				);
 			}
 
+			if (field.updates) {
+				acc.decorators.push(
+					createDecorator({
+						field: field.name,
+						updates: field.updates,
+					}),
+				);
+			}
+
 			return acc;
 		},
 		{
 			dom: [],
 			schema: customValidationSchema || Yup.object(),
 			safeguardSchema: Yup.object(),
-			// decorators: [],
+			decorators: [],
 		},
 	);
 
@@ -82,18 +92,14 @@ export const useFormGenerator = ({
 	renderInput,
 }: UseFinalFormGeneratorPropsType): UseFinalFormGeneratorResultType => {
 	const [formProps, setFormProps] = useState({
-		// decorators: [],
+		decorators: [],
 		dom: [],
 		validate: () => {},
 	});
 
 	useEffect(() => {
 		// extract information from fields
-		const {
-			dom,
-			schema,
-			// , decorators
-		} = computeForm({
+		const {dom, schema, decorators} = computeForm({
 			fields,
 			customValidationSchema,
 			defaultValidation,
@@ -106,7 +112,7 @@ export const useFormGenerator = ({
 		};
 
 		setFormProps({
-			// decorators,
+			decorators,
 			dom,
 			validate,
 		});

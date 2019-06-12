@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import {type Decorator} from 'final-form';
 import {Form as FinalForm} from 'react-final-form';
 import {makeStyles} from '@material-ui/styles';
 
@@ -14,6 +15,7 @@ type StylePropsType = {
 export type PropsType = {
 	dom: React$Node[],
 	validate: (values: Object) => Object,
+	decorators: Decorator[],
 	onSubmit: (values: Object) => any,
 	initialValues?: Object,
 	// i dont get it, thoses props are used in STYLE
@@ -50,6 +52,7 @@ const FormComponent = ({
 	validate,
 	onSubmit,
 	initialValues = {},
+	decorators,
 	renderSubmit = renderSimpleSubmit('Valider'),
 	children,
 	devMode = false,
@@ -61,6 +64,7 @@ const FormComponent = ({
 		<FinalForm
 			validate={validate}
 			onSubmit={onSubmit}
+			decorators={decorators}
 			initialValues={initialValues}
 			render={({
 				handleSubmit,

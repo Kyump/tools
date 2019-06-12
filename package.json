@@ -84,17 +84,9 @@
   "main": "babel.config.js",
   "dependencies": {},
   "scripts": {
-    "start-mui-example": "webpack-dev-server --config packages/final-form-generator-mui-example/webpack.dev.config.js --hot",
-    "//////": "check",
-    "lint": "eslint .",
-    "fix": "eslint --fix .",
-    "flow": "flow check --color=always --show-all-errors",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "ultra-check": "npm run lint && npm run flow && npm run test",
-    "clean": "rimraf node_modules",
-    "build0": "rollup --config --environment FORMAT:es",
     "validate": "nps validate",
-    "build": "lerna exec --parallel -- npm run build"
+    "build": "nps build",
+    "startDevFinalFormGenerator": "nps startDevFinalFormGenerator"
   },
   "repository": {
     "type": "git",

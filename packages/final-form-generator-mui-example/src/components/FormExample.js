@@ -6,6 +6,19 @@ import Paper from '@material-ui/core/Paper';
 
 type PropsType = {columns: number};
 
+const computeCommission = price => {
+	if (price <= 7000) {
+		return 590;
+	}
+	if (price <= 16500) {
+		return Math.max(0.06 * price, 790);
+	}
+	if (price <= 20000) {
+		return 990;
+	}
+	return Math.round(price * 0.05);
+};
+
 const SMALL_FORM = [
 	{
 		type: 'text',
@@ -188,6 +201,31 @@ const fields = [
 				],
 			},
 		],
+	},
+	{
+		label: 'Prix de vente',
+		name: 'price',
+		type: 'number',
+		updates: {
+			commission: computeCommission,
+			total: (price, {commission} = {}) =>
+				Number(price || 0) - Number(commission || 0),
+		},
+	},
+	{
+		label: 'Commission',
+		name: 'commission',
+		type: 'number',
+		updates: {
+			total: (commission, {price}) =>
+				Number(price || 0) - Number(commission || 0),
+		},
+	},
+	{
+		label: 'Net vendeur',
+		name: 'total',
+		type: 'number',
+		disabled: true,
 	},
 ];
 

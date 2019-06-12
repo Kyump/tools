@@ -10,7 +10,7 @@
 	],
 	"scripts": {
 		"build": "nps build",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"watch": "nps watch"
 	},
 	"keywords": [
 		"final-form",

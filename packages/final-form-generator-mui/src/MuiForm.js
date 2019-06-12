@@ -18,7 +18,7 @@ const MuiForm = ({
 	columns = 1,
 	rows = 0,
 }: MuiFormPropsType<FieldType>) => {
-	const {dom, validate} = useFormGenerator({
+	const {dom, validate, decorators} = useFormGenerator({
 		customValidationSchema,
 		defaultValidation,
 		fields,
@@ -30,6 +30,7 @@ const MuiForm = ({
 			columns={columns}
 			devMode={devMode}
 			dom={dom}
+			decorators={decorators}
 			initialValues={initialValues}
 			onSubmit={onSubmit}
 			renderSubmit={renderSubmit}

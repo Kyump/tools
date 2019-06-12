@@ -32,6 +32,10 @@ module.exports = {
 				},
 			},
 		},
+		watch: {
+			description: 'watch with rollup',
+			script: 'rollup --config --watch --environment FORMAT:es',
+		},
 	},
 	options: {
 		silent: false,

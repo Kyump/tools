@@ -1,4 +1,7 @@
 // @flow
+import {type Decorator} from 'final-form';
+
+type FieldUpdate = {[string]: (fieldValue: any, formValues: Object) => any};
 
 export interface BasicFieldInterface {
 	+name: string;
@@ -7,6 +10,7 @@ export interface BasicFieldInterface {
 	+validation?: Object;
 	+fields?: $ReadOnlyArray<BasicFieldInterface> | void;
 	+label?: string;
+	+updates?: FieldUpdate;
 }
 
 export type BasicFieldType<T: string> = {|
@@ -44,5 +48,6 @@ export type UseFinalFormGeneratorPropsType = {
 export type UseFinalFormGeneratorResultType = {
 	dom: React$Node[],
 	// decorators: Object[],
-	validate: (values: Object) => Object,
+	validate: (values: FormData) => Object | Promise<Object> | typeof undefined,
+	decorators: Decorator[],
 };
