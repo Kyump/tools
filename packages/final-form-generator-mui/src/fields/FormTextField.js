@@ -9,6 +9,8 @@ const parsers = (type: string) => {
 	switch (type) {
 		case 'number':
 			return value => Number(value);
+		case 'email':
+			return value => value.trim().toLowerCase();
 		default:
 			return value => value;
 	}
