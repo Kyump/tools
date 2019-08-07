@@ -3,15 +3,22 @@ import React from 'react';
 import {Field} from 'react-final-form';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import {renderLabelTypography} from './utils/label-typography';
 
 type PropsType = {
 	label: string,
 	name: string,
 	type?: string,
+	fontSizeLabel?: string,
 	style?: Object,
 };
 
-const FormRadio = ({label, type, ...props}: PropsType) => (
+const FormRadio = ({
+	label,
+	type,
+	fontSizeLabel = '1em',
+	...props
+}: PropsType) => (
 	<Field type="radio" {...props}>
 		{({input: {checked, value, name, onChange, ...restInput}, ...rest}) => (
 			<FormControlLabel
@@ -25,7 +32,7 @@ const FormRadio = ({label, type, ...props}: PropsType) => (
 						{...rest}
 					/>
 				}
-				label={label}
+				label={renderLabelTypography({optionLabel: label, fontSizeLabel})}
 			/>
 		)}
 	</Field>

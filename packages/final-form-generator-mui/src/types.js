@@ -10,7 +10,7 @@ export type OptionType = {|label: string, value: any|};
 
 export type VariantType = 'standard' | 'outlined' | 'filled';
 
-export type LabelPlacementTye = 'end' | 'start' | 'top' | 'bottom';
+export type LabelPlacementType = 'end' | 'start' | 'top' | 'bottom';
 // End of common types
 
 //
@@ -20,7 +20,7 @@ export type CheckboxFieldType = BasicInputType<'checkbox'>;
 export type CheckboxGroupFieldType = $ReadOnly<{|
 	...BasicInputType<'checkbox-group'>,
 	options: OptionType[],
-	labelPlacement?: LabelPlacementTye,
+	labelPlacement?: LabelPlacementType,
 	row?: boolean,
 |}>;
 export type FileFieldType = $ReadOnly<{|
@@ -41,7 +41,7 @@ export type RadioFieldType = BasicInputType<'radio'>;
 export type RadioGroupFieldType = $ReadOnly<{|
 	...BasicInputType<'radio-group'>,
 	options: OptionType[],
-	labelPlacement?: LabelPlacementTye,
+	labelPlacement?: LabelPlacementType,
 	row?: boolean,
 |}>;
 
