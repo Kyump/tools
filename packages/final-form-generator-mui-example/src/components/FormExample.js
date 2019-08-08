@@ -1,7 +1,9 @@
 // @flow
 import React from 'react';
 import * as Yup from 'yup';
-import FinalFormGenerator from '@kyump/final-form-generator-mui';
+import FinalFormGenerator, {
+	useRenderVariantFields,
+} from '@kyump/final-form-generator-mui';
 import Paper from '@material-ui/core/Paper';
 
 type PropsType = {columns: number};
@@ -231,7 +233,7 @@ const fields = [
 
 const FormExample = ({columns}: PropsType) => (
 	<FinalFormGenerator
-		fields={fields}
+		fields={useRenderVariantFields({fields, variant: 'filled'})}
 		columns={columns}
 		onSubmit={values => alert(values)}
 		devMode
