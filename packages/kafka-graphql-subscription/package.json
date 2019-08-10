@@ -1,6 +1,6 @@
 {
   "name": "@kyump/kafka-graphql-subscription",
-  "version": "0.1.0-beta",
+  "version": "0.1.0-alpha.22+6bee142",
   "description": "PubSub for GraphQL Subscription based on Kafka.",
   "main": "dist/kafka-graphql-subscription.cjs.js",
   "jsnext:main": "dist/kafka-graphql-subscription.es.js",
@@ -11,6 +11,9 @@
   "scripts": {
     "build": "nps build",
     "watch": "nps watch"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -34,5 +37,6 @@
     "iterall": "^1.2.2",
     "kafka-node": "^4.1.3",
     "uuid": "^3.3.2"
-  }
+  },
+  "gitHead": "6bee142a6aa9abc87932c8149d1a88039c59eb26"
 }
