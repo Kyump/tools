@@ -48,7 +48,7 @@
     "husky": "^2.4.0",
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
-    "lerna": "3.14.1",
+    "lerna": "^3.14.1",
     "lint-staged": "^8.2.0",
     "nps": "^5.9.5",
     "nps-utils": "^1.7.0",
@@ -82,7 +82,6 @@
   "description": "tools",
   "version": "0.0.2-alpha.0",
   "main": "babel.config.js",
-  "dependencies": {},
   "scripts": {
     "validate": "nps validate",
     "build": "nps build",
