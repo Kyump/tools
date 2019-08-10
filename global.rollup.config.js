@@ -47,6 +47,14 @@ export function generateConfig(optional) {
 			resolve({mainFields: ['jsnext:main']}),
 			commonjs({
 				include: 'node_modules/**',
+				namedExports: {
+					// left-hand side can be an absolute path, a path
+					// relative to the current directory, or the name
+					// of a module in node_modules
+					'../../node_modules/@babel/runtime/helpers/defineProperty.js': [
+						'named',
+					],
+				},
 			}),
 			babel({
 				rootMode: 'upward',
