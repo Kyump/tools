@@ -4,7 +4,7 @@ module.exports = {
 	scripts: {
 		build: {
 			description: 'delete the dist directory and run all builds',
-			default: series(rimraf('dist'), concurrent.nps('build.es')),
+			default: series(rimraf('dist'), concurrent.nps('build.es', 'build.cjs')),
 			es: {
 				description: 'run the build with rollup (uses rollup.config.js)',
 				script: 'rollup --config --environment FORMAT:es',

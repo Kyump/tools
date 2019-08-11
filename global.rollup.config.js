@@ -46,7 +46,7 @@ export function generateConfig(optional) {
 		plugins: [
 			resolve({mainFields: ['jsnext:main']}),
 			commonjs({
-				include: 'node_modules/**',
+				include: /node_modules/,
 				namedExports: {
 					// left-hand side can be an absolute path, a path
 					// relative to the current directory, or the name

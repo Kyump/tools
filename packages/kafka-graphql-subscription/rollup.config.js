@@ -10,15 +10,6 @@ const name = pkg.name.replace(/^@kyump\//, '');
 
 export default generateConfig({
 	name,
-	output: Object.assign(genrateOutput(name), {
-		exports: 'named',
-		globals: {
-			react: 'React',
-			'final-form': 'FinalForm',
-			'final-form-calculate': 'FinalFormCalculate',
-			'react-final-form': 'ReactFinalForm',
-			yup: 'Yup',
-		},
-	}),
+	output: Object.assign(genrateOutput(name), {}),
 	external: generateExternal(pkg),
 });
