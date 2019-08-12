@@ -21,7 +21,8 @@ class KafkaPubSubIterator<T> implements AsyncIterator<T> {
 		this.pullQueue = [];
 		this.pushQueue = [];
 		this.listening = true;
-		this.eventsArray = Array.isArray(eventNames) ? eventNames : [eventNames];
+		this.eventsArray =
+			typeof eventNames === 'string' ? [eventNames] : eventNames;
 		this.allSubscribed = this.subscribeAll();
 	}
 
