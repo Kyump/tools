@@ -13,7 +13,7 @@ type PropsType = {
 
 const FormCheckbox = ({label, type, ...props}: PropsType) => (
 	<Field type="checkbox" {...props}>
-		{({input: {name, onChange, ...restInput}, ...rest}) => (
+		{({input: {name, onChange, checked, ...restInput}, ...rest}) => (
 			<FormControlLabel
 				control={
 					<Checkbox
@@ -21,6 +21,7 @@ const FormCheckbox = ({label, type, ...props}: PropsType) => (
 						color="primary"
 						onChange={onChange}
 						inputProps={restInput}
+						checked={checked}
 						{...rest}
 					/>
 				}
