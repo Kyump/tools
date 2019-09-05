@@ -232,6 +232,13 @@ const fields = [
 const FormExample = ({columns}: PropsType) => (
 	<FinalFormGenerator
 		fields={fields}
+		initialValues={{
+			text: 'azerty',
+			simpleCheckbox: true,
+			multipleCheckBox: ['CHOICE_2'],
+			simpleRadio: true,
+			multipleRadio: 'CHOICE_2',
+		}}
 		columns={columns}
 		onSubmit={values => alert(values)}
 		devMode
