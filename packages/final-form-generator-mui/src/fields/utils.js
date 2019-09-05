@@ -28,7 +28,13 @@ export const defaultValidation = (type?: string) => {
 				.email()
 				.required();
 		case 'file':
-			return Yup.object().required();
+			return Yup.mixed()
+				.required()
+				.test(
+					'fileType',
+					'Unsupported file format',
+					value => !!value.name && !!value.type && value.size,
+				);
 		case 'multi-select':
 			return Yup.array()
 				.of(Yup.string())
