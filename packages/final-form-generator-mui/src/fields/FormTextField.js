@@ -27,6 +27,7 @@ type PropsType = {
 		| 'datetime-local'
 		| 'time'
 		| 'date',
+	disabled?: boolean,
 	style?: Object,
 	variant?: VariantType,
 };
@@ -36,6 +37,7 @@ const FormTextField = ({
 	type,
 	variant = 'outlined',
 	name,
+	disabled,
 	style,
 }: PropsType) => (
 	<Field name={name} type={type} label={label} parse={parsers(type)}>
@@ -47,6 +49,7 @@ const FormTextField = ({
 				helperText={meta.touched ? meta.error : undefined}
 				variant={variant}
 				value={value}
+				disabled={disabled}
 				style={style}
 				InputLabelProps={{
 					shrink:

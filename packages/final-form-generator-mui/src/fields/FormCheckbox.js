@@ -8,10 +8,11 @@ type PropsType = {
 	label: string,
 	name: string,
 	style?: Object,
+	disabled?: boolean,
 	type?: string,
 };
 
-const FormCheckbox = ({label, type, ...props}: PropsType) => (
+const FormCheckbox = ({label, type, disabled, ...props}: PropsType) => (
 	<Field type="checkbox" {...props}>
 		{({input: {name, onChange, checked, ...restInput}, ...rest}) => (
 			<FormControlLabel
@@ -22,6 +23,7 @@ const FormCheckbox = ({label, type, ...props}: PropsType) => (
 						onChange={onChange}
 						inputProps={restInput}
 						checked={checked}
+						disabled={disabled}
 						{...rest}
 					/>
 				}

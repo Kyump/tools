@@ -9,7 +9,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import {makeStyles} from '@material-ui/styles';
 
-import type {LabelPlacementTye, OptionType} from '../types';
+import type {LabelPlacementType, OptionType} from '../types';
 
 const useStyles = makeStyles(theme => ({
 	formControl: {
@@ -24,8 +24,9 @@ type PropsType = {
 	label: string,
 	name: string,
 	options: OptionType[],
-	labelPlacement?: LabelPlacementTye,
+	labelPlacement?: LabelPlacementType,
 	row?: boolean,
+	disabled?: boolean,
 	style?: Object,
 };
 
@@ -33,6 +34,7 @@ const FormRadioGroup = ({
 	label,
 	labelPlacement = 'end',
 	row,
+	disabled,
 	style,
 	options,
 	...props
@@ -50,6 +52,7 @@ const FormRadioGroup = ({
 					className={classes.formControl}
 					{...rest}
 					error={meta.error && meta.touched}
+					disabled={disabled}
 					style={style}
 				>
 					<FormLabel component="legend">{label}</FormLabel>

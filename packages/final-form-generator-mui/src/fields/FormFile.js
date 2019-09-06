@@ -39,6 +39,7 @@ type PropsType = {
 	name: string,
 	value?: string,
 	variant?: VariantType,
+	disabled?: boolean,
 	withPreview?: boolean,
 };
 
@@ -46,6 +47,7 @@ const FormFile = ({
 	label,
 	variant = 'outlined',
 	withPreview,
+	disabled,
 	...props
 }: PropsType) => (
 	<Field type="file" {...props}>
@@ -78,7 +80,7 @@ const FormFile = ({
 						{withPreview && value && (
 							<ImagePreview classes={classes} label={label} value={value} />
 						)}
-						<Button variant={variant} component="span">
+						<Button variant={variant} disabled={disabled} component="span">
 							{value ? value.name : label}
 							<CloudUploadIcon className={classes.rightIcon} />
 						</Button>

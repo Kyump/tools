@@ -119,7 +119,7 @@ const fields = [
 		label: 'File to upload',
 		type: 'file',
 		name: 'fileToUpload',
-		withPreview: true,
+		withPreview: false,
 	},
 	{
 		label: 'File to upload with preview',
