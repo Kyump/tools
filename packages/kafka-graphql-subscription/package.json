@@ -1,0 +1,45 @@
+{
+  "name": "@kyump/kafka-graphql-subscription",
+  "version": "0.1.0-alpha.22+6bee142",
+  "description": "PubSub for GraphQL Subscription based on Kafka.",
+  "main": "dist/kafka-graphql-subscription.cjs.js",
+  "jsnext:main": "dist/kafka-graphql-subscription.es.js",
+  "module": "dist/kafka-graphql-subscription.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "nps build",
+    "watch": "nps watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g-bastianelli/kafka-graphql-subscription.git"
+  },
+  "keywords": [
+    "graphql",
+    "subscription",
+    "kafka",
+    "pubsub"
+  ],
+  "author": "Guillaume Bastianelli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/g-bastianelli/kafka-graphql-subscription/issues"
+  },
+  "homepage": "https://github.com/g-bastianelli/kafka-graphql-subscription#readme",
+  "dependencies": {
+    "@log4js-node/log4js-api": "^1.0.2",
+    "async-retry": "^1.2.3",
+    "graphql-subscriptions": "^1.1.0",
+    "iterall": "^1.2.2",
+    "kafkajs": "^1.10.0",
+    "log4js": "^5.1.0",
+    "promise-retry": "^1.1.1",
+    "uuid": "^3.3.2"
+  },
+  "gitHead": "6bee142a6aa9abc87932c8149d1a88039c59eb26"
+}

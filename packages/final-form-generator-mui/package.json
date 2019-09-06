@@ -2,6 +2,7 @@
 	"name": "@kyump/final-form-generator-mui",
 	"version": "1.0.3",
 	"description": "use of final-form-generator with mui",
+	"homepage": "https://github.com/Kyump/tools/tree/master/packages/final-form-generator-mui",
 	"main": "dist/final-form-generator-mui.cjs.js",
 	"jsnext:main": "dist/final-form-generator-mui.es.js",
 	"module": "dist/final-form-generator-mui.es.js",
