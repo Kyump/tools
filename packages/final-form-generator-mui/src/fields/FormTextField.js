@@ -41,25 +41,23 @@ const FormTextField = ({
 	style,
 }: PropsType) => (
 	<Field name={name} type={type} label={label} parse={parsers(type)}>
-		{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => {
-			return (
-				<TextField
-					inputProps={restInput}
-					error={meta.error && meta.touched}
-					onChange={onChange}
-					helperText={meta.touched ? meta.error : undefined}
-					variant={variant}
-					value={value}
-					disabled={disabled}
-					style={style}
-					InputLabelProps={{
-						shrink:
-							['date', 'time', 'datetime-local'].includes(type) || undefined,
-					}}
-					{...renderPropsRest}
-				/>
-			);
-		}}
+		{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => (
+			<TextField
+				inputProps={restInput}
+				error={meta.error && meta.touched}
+				onChange={onChange}
+				helperText={meta.touched ? meta.error : undefined}
+				variant={variant}
+				value={value}
+				disabled={disabled}
+				style={style}
+				InputLabelProps={{
+					shrink:
+						['date', 'time', 'datetime-local'].includes(type) || undefined,
+				}}
+				{...renderPropsRest}
+			/>
+		)}
 	</Field>
 );
 
