@@ -7,7 +7,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 
-import type {LabelPlacementTye, OptionType} from '../types';
+import type {LabelPlacementType, OptionType} from '../types';
 import FormCheckbox from './FormCheckbox';
 
 const useStyles = makeStyles(theme => ({
@@ -24,7 +24,8 @@ type PropsType = {
 	name: string,
 	options: OptionType[],
 	style?: Object,
-	labelPlacement?: LabelPlacementTye,
+	disabled?: boolean,
+	labelPlacement?: LabelPlacementType,
 	row?: boolean,
 };
 
@@ -35,6 +36,7 @@ const FormCheckboxGroup = ({
 	options,
 	row,
 	style,
+	disabled,
 }: PropsType) => {
 	const classes = useStyles();
 	return (
@@ -45,6 +47,7 @@ const FormCheckboxGroup = ({
 					className={classes.formControl}
 					error={meta.error && meta.touched}
 					style={style}
+					disabled={disabled}
 				>
 					<FormLabel component="legend">{label}</FormLabel>
 					<FormGroup className={classes.group} row={row}>

@@ -17,6 +17,7 @@ type PropsType = {
 	options: OptionType[],
 	native?: boolean,
 	style?: Object,
+	disabled?: boolean,
 	variant?: VariantType,
 };
 
@@ -25,6 +26,7 @@ const FormSelect = ({
 	variant = 'outlined',
 	options,
 	name,
+	disabled,
 	native,
 }: PropsType) => {
 	const {inputLabel, InputComponent, labelWidth, renderOption} = useSelect({
@@ -39,6 +41,7 @@ const FormSelect = ({
 				<FormControl
 					error={meta.error && meta.touched}
 					variant={variant}
+					disabled={disabled}
 					{...renderPropsRest}
 				>
 					<InputLabel ref={inputLabel} htmlFor={name}>
