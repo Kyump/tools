@@ -1,6 +1,6 @@
 {
   "name": "@kyump/kafka-graphql-subscription",
-  "version": "0.1.0-alpha.22+6bee142",
+  "version": "0.1.0",
   "description": "PubSub for GraphQL Subscription based on Kafka.",
   "main": "dist/kafka-graphql-subscription.cjs.js",
   "jsnext:main": "dist/kafka-graphql-subscription.es.js",
