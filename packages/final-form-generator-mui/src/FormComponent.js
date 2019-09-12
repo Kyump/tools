@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import {type Decorator} from 'final-form';
+import {type Decorator, type Mutator} from 'final-form';
 import {Form as FinalForm} from 'react-final-form';
 import {makeStyles} from '@material-ui/styles';
 
@@ -16,6 +16,7 @@ export type PropsType = {
 	dom: React$Node[],
 	validate: (values: Object) => Object,
 	decorators: Decorator[],
+	mutators: {[string]: Mutator},
 	onSubmit: (values: Object) => any,
 	initialValues?: Object,
 	columns?: number,
@@ -52,6 +53,7 @@ const FormComponent = ({
 	onSubmit,
 	initialValues = {},
 	decorators,
+	mutators,
 	renderSubmit = renderSimpleSubmit('Valider'),
 	children,
 	devMode = false,
@@ -64,6 +66,7 @@ const FormComponent = ({
 			validate={validate}
 			onSubmit={onSubmit}
 			decorators={decorators}
+			mutators={mutators}
 			initialValues={initialValues}
 			render={({
 				handleSubmit,
