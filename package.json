@@ -85,6 +85,8 @@
   "scripts": {
     "validate": "nps validate",
     "build": "nps build",
+    "clean": "nps clean",
+    "clean-all": "nps clean.all",
     "startDevFinalFormGenerator": "nps startDevFinalFormGenerator"
   },
   "repository": {

@@ -6,6 +6,7 @@
 [include]
 
 [untyped]
+.*/final-form-calculate/.*
 <PROJECT_ROOT>/packages/inspection-app/node_modules/react-native/Libraries/.*
 
 [libs]

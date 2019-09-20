@@ -11,6 +11,8 @@
 	],
 	"scripts": {
 		"build": "nps build",
+		"clean": "nps clean",
+		"clean-all": "nps clean.all",
 		"watch": "nps watch"
 	},
 	"keywords": [

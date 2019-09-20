@@ -7,6 +7,8 @@
 	"scripts": {
 		"lint": "eslint .",
 		"build": "echo \"No build\" && exit 0",
+		"clean": "nps clean",
+		"clean-all": "nps clean.all",
 		"watch": "echo \"No watch\" && exit 0"
 	},
 	"keywords": [],
