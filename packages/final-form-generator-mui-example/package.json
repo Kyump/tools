@@ -1,6 +1,6 @@
 {
 	"name": "@kyump/final-form-generator-mui-example",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "",
 	"main": "index.js",
 	"private": true,
@@ -27,8 +27,8 @@
 		"yup": "0.27.0"
 	},
 	"devDependencies": {
-		"@kyump/final-form-generator": "^1.0.4",
-		"@kyump/final-form-generator-mui": "^1.0.6"
+		"@kyump/final-form-generator": "^1.0.7",
+		"@kyump/final-form-generator-mui": "^1.0.7"
 	},
 	"resolutions": {
 		"**/react": "16.7.0-alpha.2",
