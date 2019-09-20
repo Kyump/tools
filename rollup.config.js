@@ -51,17 +51,15 @@ if (es) {
 
 export default {
 	input: 'packages/final-form-generator/src/index.js',
-	output: Object.assign(
-		{
-			name: 'react-final-form',
-			exports: 'named',
-			globals: {
-				react: 'React',
-				'final-form': 'FinalForm',
-			},
+	output: {
+		name: 'react-final-form',
+		exports: 'named',
+		globals: {
+			react: 'React',
+			'final-form': 'FinalForm',
 		},
-		output,
-	),
+		...output,
+	},
 	external: makeExternalPredicate(
 		umd
 			? Object.keys(pkg.peerDependencies || {})

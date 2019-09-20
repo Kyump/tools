@@ -50,7 +50,10 @@
 		],
 		// desable default props shit cause we have flow
 		"react/default-props-match-prop-types": 0,
-
+		// fuck you
+		"react/jsx-props-no-spreading": 0,
+		// prettier handle this
+		"react/jsx-curly-newline": 0,
 		// I export what i want
 		"import/prefer-default-export": 0,
 		// there is problem with @expo/ depedencies
