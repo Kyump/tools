@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sh 'node -v'
                 sh 'npm install'
-                sh 'lerna bootstrap'
                 sh 'npm run build'
+                sh 'lerna bootstrap'
             }
         }
         stage('Test') {
