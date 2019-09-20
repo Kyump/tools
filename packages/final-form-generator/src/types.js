@@ -49,5 +49,5 @@ export type UseFinalFormGeneratorPropsType = {
 export type UseFinalFormGeneratorResultType = {
 	dom: React$Node[],
 	validate: (values: FormData) => Object | Promise<Object> | typeof undefined,
-	decorators: Decorator[],
+	decorators: Decorator<Object>[],
 };

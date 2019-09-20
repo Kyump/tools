@@ -15,10 +15,11 @@ type StylePropsType = {
 export type PropsType = {
 	dom: React$Node[],
 	validate: (values: Object) => Object,
-	decorators: Decorator[],
-	mutators: {[string]: Mutator},
+	decorators: Array<Decorator<Object>>,
+	mutators?: {[string]: Mutator<Object>},
 	onSubmit: (values: Object) => any,
 	initialValues?: Object,
+	initialValuesEqual?: (?Object, ?Object) => boolean,
 	columns?: number,
 	rows?: number,
 	renderSubmit?: (params: RenderSubmitParamsType) => React$Element<*>,
@@ -52,6 +53,7 @@ const FormComponent = ({
 	validate,
 	onSubmit,
 	initialValues = {},
+	initialValuesEqual,
 	decorators,
 	mutators,
 	renderSubmit = renderSimpleSubmit('Valider'),
@@ -68,6 +70,7 @@ const FormComponent = ({
 			decorators={decorators}
 			mutators={mutators}
 			initialValues={initialValues}
+			initialValuesEqual={initialValuesEqual}
 			render={({
 				handleSubmit,
 				submitting,

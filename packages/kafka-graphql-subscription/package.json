@@ -10,6 +10,8 @@
   ],
   "scripts": {
     "build": "nps build",
+    "clean": "nps clean",
+    "clean-all": "nps clean.all",
     "watch": "nps watch"
   },
   "publishConfig": {
@@ -41,5 +43,5 @@
     "promise-retry": "^1.1.1",
     "uuid": "^3.3.2"
   },
-  "gitHead": "6bee142a6aa9abc87932c8149d1a88039c59eb26"
+  "gitHead": "8cd71e116492995efbb5b395931167c32e55af05"
 }

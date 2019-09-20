@@ -23,6 +23,16 @@ module.exports = {
 			decription: 'This will build all the libs of the project.',
 			script: 'lerna exec --parallel -- npm run build',
 		},
+		clean: {
+			default: {
+				description: 'Delete all transpilation folders.',
+				script: 'lerna exec --parallel -- npm run clean',
+			},
+			all: {
+				description: 'Delete all transpilation and node_modules folders.',
+				script: 'lerna exec --parallel -- npm run clean-all',
+			},
+		},
 		watchFinalFormGenerator: {
 			description: 'This watch and rebuild Final Form Generator bundles.',
 			script: 'lerna exec --parallel -- npm run watch',

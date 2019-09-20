@@ -60,6 +60,7 @@ const FormSelect = ({
 							/>
 						}
 					>
+						{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
 						<option value="" />
 						{options.map(renderOption)}
 					</Select>

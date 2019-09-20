@@ -7,6 +7,8 @@
 	"scripts": {
 		"lint": "eslint .",
 		"build": "echo \"No build\" && exit 0",
+		"clean": "nps clean",
+		"clean-all": "nps clean.all",
 		"watch": "echo \"No watch\" && exit 0"
 	},
 	"keywords": [],
@@ -16,11 +18,11 @@
 		"@material-ui/core": "4.0.1",
 		"@material-ui/icons": "4.0.1",
 		"babel-polyfill": "6.26.0",
-		"final-form": "4.13.1",
+		"final-form": "4.18.5",
 		"final-form-calculate": "1.3.1",
 		"react": "16.8.6",
 		"react-dom": "16.8.6",
-		"react-final-form": "6.0.1",
+		"react-final-form": "6.3.0",
 		"string-hash": "1.1.3",
 		"yup": "0.27.0"
 	},
