@@ -238,6 +238,7 @@ const FormExample = ({columns}: PropsType) => (
 			multipleCheckBox: ['CHOICE_2'],
 			simpleRadio: true,
 			multipleRadio: 'CHOICE_2',
+			multiSelect: ['CHOICE_1'],
 		}}
 		columns={columns}
 		onSubmit={values => alert(values)}
