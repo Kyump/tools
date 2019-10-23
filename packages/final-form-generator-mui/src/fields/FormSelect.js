@@ -5,6 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import type {OptionType, VariantType} from '../types';
 
@@ -61,7 +62,7 @@ const FormSelect = ({
 						}
 					>
 						{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-						<option value="" />
+						{native ? <option value="" /> : <MenuItem value="" />}
 						{options.map(renderOption)}
 					</Select>
 					{meta.error && meta.touched && (
