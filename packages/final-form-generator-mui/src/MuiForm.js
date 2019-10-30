@@ -18,14 +18,15 @@ const MuiForm = ({
 	columns = 1,
 	rows = 0,
 }: MuiFormPropsType<FieldType>) => {
-	const {dom, validate, decorators} = useFormGenerator({
+	const {dom, validate, decorators, loading} = useFormGenerator({
 		customValidationSchema,
 		defaultValidation,
 		fields,
 		preValidate,
 		renderInput,
 	});
-	return (
+
+	return loading ? null : (
 		<FormComponent
 			columns={columns}
 			devMode={devMode}

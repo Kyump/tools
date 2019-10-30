@@ -95,6 +95,7 @@ export const useFormGenerator = ({
 		decorators: [],
 		dom: [],
 		validate: () => {},
+		loading: true,
 	});
 
 	useEffect(() => {
@@ -115,6 +116,7 @@ export const useFormGenerator = ({
 			decorators,
 			dom,
 			validate,
+			loading: false,
 		});
 	}, [fields]);
 	return formProps;

@@ -16,7 +16,8 @@ const FormRadio = ({label, type, disabled, ...props}: PropsType) => (
 	<Field type="radio" {...props}>
 		{({
 			input: {checked, value, name, onChange, ...restInput},
-			meta: {initial, ...rest},
+			meta: {initial},
+			...rest
 		}) => (
 			<FormControlLabel
 				control={

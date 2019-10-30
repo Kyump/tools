@@ -79,38 +79,40 @@ export const defaultValidation = (type?: string) => {
 };
 
 const ExampleForm = () => {
-    const {dom, validate, decorators} = useFormGenerator({
-        defaultValidation,
-        fields,
-        renderInput,
-    });
-    return (
-        <Form
-            decorators={decorators}
-            onSubmit={values => alert(values)}
-            validate={validate}
-            render={({
-                handleSubmit,
-                form,
-                submitting,
-                pristine,
-                invalid,
-                values,
-                errors,
-            }) => (
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        {dom}
-                        <button type="submit" disabled={invalid || submitting || pristine}>
-                            Submit
-                        </button>
-                    </div>
-                    <pre>{JSON.stringify(values, 0, 2)}</pre>
-                    <pre>{JSON.stringify(errors, 0, 2)}</pre>
-                </form>
-            )}
-        />
-    );
+	const {dom, validate, decorators, loading} = useFormGenerator({
+		defaultValidation,
+		fields,
+		renderInput,
+	});
+	return loading ? (
+		'Chargement'
+	) : (
+		<Form
+			decorators={decorators}
+			onSubmit={values => alert(values)}
+			validate={validate}
+			render={({
+				handleSubmit,
+				form,
+				submitting,
+				pristine,
+				invalid,
+				values,
+				errors,
+			}) => (
+				<form onSubmit={handleSubmit}>
+					<div>
+						{dom}
+						<button type="submit" disabled={invalid || submitting || pristine}>
+							Submit
+						</button>
+					</div>
+					<pre>{JSON.stringify(values, 0, 2)}</pre>
+					<pre>{JSON.stringify(errors, 0, 2)}</pre>
+				</form>
+			)}
+		/>
+	);
 };
 
 export default ExampleForm;

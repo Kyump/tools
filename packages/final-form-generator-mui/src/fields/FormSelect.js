@@ -29,7 +29,7 @@ const FormSelect = ({
 	disabled,
 	native,
 }: PropsType) => {
-	const {inputLabel, InputComponent, labelWidth, renderOption} = useSelect({
+	const {inputLabel, InputComponent, renderOption} = useSelect({
 		native,
 		variant,
 		renderMuiOption,
@@ -51,14 +51,7 @@ const FormSelect = ({
 						native={native}
 						value={value}
 						onChange={onChange}
-						input={
-							<InputComponent
-								name={name}
-								labelWidth={labelWidth}
-								id={name}
-								{...restInput}
-							/>
-						}
+						input={<InputComponent name={name} id={name} {...restInput} />}
 					>
 						{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
 						<option value="" />
