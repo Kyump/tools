@@ -2,6 +2,7 @@
 import React from 'react';
 import useFormGenerator from '@kyump/final-form-generator';
 
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {defaultValidation, renderInput} from './fields/utils';
 import type {FieldType, MuiFormPropsType} from './types';
 import FormComponent from './FormComponent';
@@ -26,7 +27,9 @@ const MuiForm = ({
 		renderInput,
 	});
 
-	return loading ? null : (
+	return loading ? (
+		<CircularProgress />
+	) : (
 		<FormComponent
 			columns={columns}
 			devMode={devMode}

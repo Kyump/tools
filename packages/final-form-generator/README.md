@@ -85,7 +85,7 @@ const ExampleForm = () => {
 		renderInput,
 	});
 	return loading ? (
-		'Chargement'
+		'Loading'
 	) : (
 		<Form
 			decorators={decorators}
