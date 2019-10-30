@@ -7,7 +7,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 
-import type {LabelPlacementType, OptionType} from '../types';
+import type {OptionType} from '../types';
 import FormCheckbox from './FormCheckbox';
 
 const useStyles = makeStyles(theme => ({
@@ -25,13 +25,11 @@ type PropsType = {
 	options: OptionType[],
 	style?: Object,
 	disabled?: boolean,
-	labelPlacement?: LabelPlacementType,
 	row?: boolean,
 };
 
 const FormCheckboxGroup = ({
 	label,
-	labelPlacement,
 	name,
 	options,
 	row,
@@ -56,7 +54,6 @@ const FormCheckboxGroup = ({
 								key={`${name}-option-${optionValue}`}
 								name={name}
 								label={optionLabel}
-								labelPlacement={labelPlacement}
 								value={optionValue}
 							/>
 						))}

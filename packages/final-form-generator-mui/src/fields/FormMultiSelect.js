@@ -43,7 +43,7 @@ const FormTextField = ({
 	disabled,
 	variant = 'outlined',
 }: PropsType) => {
-	const {inputLabel, InputComponent, labelWidth, renderOption} = useSelect({
+	const {inputLabel, InputComponent, renderOption} = useSelect({
 		native,
 		variant,
 		renderMuiOption: renderMuiCheckedOption,
@@ -84,7 +84,6 @@ const FormTextField = ({
 							input={
 								<InputComponent
 									name={name}
-									labelWidth={labelWidth}
 									id={`${name}-label-placeholder`}
 									{...restInput}
 								/>
