@@ -50,12 +50,8 @@ const FormTextField = ({
 		renderNativeOption,
 	});
 	return (
-		<Field name={name} label={label} defaultValue={[]}>
-			{({
-				input: {onChange, value = [], ...restInput},
-				meta,
-				...renderPropsRest
-			}) => {
+		<Field name={name} label={label}>
+			{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => {
 				const {valueLabelMap, optionItems} = extractValueLabelAndItems(
 					options,
 					renderOption,
@@ -79,7 +75,7 @@ const FormTextField = ({
 						<Select
 							multiple
 							native={native}
-							value={value}
+							value={value || []}
 							onChange={onChange}
 							input={
 								<InputComponent
