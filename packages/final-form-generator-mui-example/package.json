@@ -24,7 +24,7 @@
 		"react-dom": "16.8.6",
 		"react-final-form": "6.3.0",
 		"string-hash": "1.1.3",
-		"yup": "0.27.0"
+		"yup": "0.28.0"
 	},
 	"devDependencies": {
 		"@kyump/final-form-generator": "^1.0.8",
