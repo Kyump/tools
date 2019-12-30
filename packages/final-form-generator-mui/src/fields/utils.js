@@ -33,7 +33,7 @@ export const defaultValidation = (type?: string) => {
 				.test(
 					'fileType',
 					'Unsupported file format',
-					value => !!value.name && !!value.type && value.size,
+					value => !value || (!!value.name && !!value.type && value.size),
 				);
 		case 'multi-select':
 			return Yup.array()

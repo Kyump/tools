@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import {type Decorator, type Mutator} from 'final-form';
-import {Form as FinalForm} from 'react-final-form';
+import {Form as FinalForm, FormSpy} from 'react-final-form';
 import {makeStyles} from '@material-ui/styles';
 
 import {renderSimpleSubmit} from './fields/utils';
@@ -71,31 +71,35 @@ const FormComponent = ({
 			mutators={mutators}
 			initialValues={initialValues}
 			initialValuesEqual={initialValuesEqual}
-			render={({
-				handleSubmit,
-				submitting,
-				pristine,
-				invalid,
-				values,
-				errors,
-			}) => {
+			subscription={{handleSubmit: true}}
+			render={({handleSubmit}) => {
 				return (
 					<>
 						<form onSubmit={handleSubmit} className={classes.inputContainer}>
 							{dom}
-							{renderSubmit({
-								invalid,
-								submitting,
-								pristine,
-								classes,
-							})}
+
+							<FormSpy
+								subscription={{invalid: true, submitting: true, pristine: true}}
+							>
+								{({invalid, submitting, pristine}) =>
+									renderSubmit({
+										invalid,
+										submitting,
+										pristine,
+										classes,
+									})
+								}
+							</FormSpy>
 							{children}
 						</form>
-						{process.env.NODE_ENV === 'development' &&
-							devMode && [
-								<pre key="values-for-dev">{formatJson(values)}</pre>,
-								<pre key="erros-for-dev">{formatJson(errors)}</pre>,
-							]}
+						{process.env.NODE_ENV === 'development' && devMode && (
+							<FormSpy subscription={{values: true, errors: true}}>
+								{({values, errors}) => [
+									<pre key="values-for-dev">{formatJson(values)}</pre>,
+									<pre key="erros-for-dev">{formatJson(errors)}</pre>,
+								]}
+							</FormSpy>
+						)}
 					</>
 				);
 			}}
