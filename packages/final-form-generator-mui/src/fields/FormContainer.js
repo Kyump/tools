@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 
 type PropsType = {
-	label: string,
+	label?: string,
 	children: Node,
 	columns?: number,
 	style?: Object,

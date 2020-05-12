@@ -24,9 +24,7 @@ export const defaultValidation = (type?: string) => {
 		case 'date':
 			return Yup.date().required();
 		case 'email':
-			return Yup.string()
-				.email()
-				.required();
+			return Yup.string().email().required();
 		case 'file':
 			return Yup.mixed()
 				.required()
@@ -36,13 +34,9 @@ export const defaultValidation = (type?: string) => {
 					value => !value || (!!value.name && !!value.type && value.size),
 				);
 		case 'multi-select':
-			return Yup.array()
-				.of(Yup.string())
-				.required();
+			return Yup.array().of(Yup.string()).required();
 		default:
-			return Yup.string()
-				.trim()
-				.required();
+			return Yup.string().trim().required();
 	}
 };
 
@@ -59,19 +53,19 @@ export const renderInput = ({
 	const key = `${field.type}-${stringHash(field.label || field.name)}-${index}`;
 	switch (field.type) {
 		case 'radio':
-			return <FormRadio key={key} {...field} />;
+			return <FormRadio {...field} key={key} />;
 		case 'radio-group':
-			return <FormRadioGroup key={key} {...field} />;
+			return <FormRadioGroup {...field} key={key} />;
 		case 'checkbox':
-			return <FormCheckbox key={key} {...field} />;
+			return <FormCheckbox {...field} key={key} />;
 		case 'checkbox-group':
-			return <FormCheckboxGroup key={key} {...field} />;
+			return <FormCheckboxGroup {...field} key={key} />;
 		case 'select':
 			return <FormSelect key={key} {...field} />;
 		case 'multi-select':
-			return <FormMultiSelect key={key} {...field} />;
+			return <FormMultiSelect {...field} key={key} />;
 		case 'file':
-			return <FormFile key={key} {...field} />;
+			return <FormFile {...field} key={key} />;
 		case 'condition':
 			return (
 				<FormCondition key={key} name={field.name} predicate={field.predicate}>
@@ -80,7 +74,7 @@ export const renderInput = ({
 			);
 		case 'container':
 			return (
-				<FormContainer key={key} {...field}>
+				<FormContainer {...field} key={key}>
 					{children}
 				</FormContainer>
 			);
@@ -92,7 +86,7 @@ export const renderInput = ({
 		case 'number':
 		case 'password':
 			// $FlowFixMe TODO check this at the end
-			return <FormTextField key={key} {...field} />;
+			return <FormTextField {...field} key={key} />;
 		default:
 			return <span key={key}>{`${field.type} not handled`}</span>;
 	}

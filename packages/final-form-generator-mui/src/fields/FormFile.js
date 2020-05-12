@@ -50,16 +50,16 @@ const FormFile = ({
 	disabled,
 	...props
 }: PropsType) => (
-	<Field type="file" {...props}>
+	<Field {...props} type="file">
 		{({input: {name, value, onChange, ...restInput}, meta, ...rest}) => {
 			const classes = useStyles({value});
 			const id = `${name}-file`;
 			return (
 				<FormControl
+					{...rest}
 					component="fieldset"
 					className={classes.formControl}
 					error={meta.error && meta.touched}
-					{...rest}
 				>
 					<input
 						{...restInput}

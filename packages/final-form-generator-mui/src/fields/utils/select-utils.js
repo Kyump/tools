@@ -11,7 +11,7 @@ export type OptionsPropsType = $ReadOnly<{
 }>;
 
 export const renderMuiOption = ({label, value, ...rest}: OptionsPropsType) => (
-	<MenuItem key={`option-${value}`} value={value} {...rest}>
+	<MenuItem {...rest} key={`option-${value}`} value={value}>
 		{label}
 	</MenuItem>
 );
@@ -21,7 +21,7 @@ export const renderNativeOption = ({
 	label,
 	...rest
 }: OptionsPropsType) => (
-	<option key={`option-${value}`} value={value} {...rest}>
+	<option {...rest} key={`option-${value}`} value={value}>
 		{label}
 	</option>
 );
