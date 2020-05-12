@@ -54,7 +54,7 @@
     "nps-utils": "^1.7.0",
     "path": "0.12.7",
     "prettier": "1.19.1",
-    "rimraf": "2.6.3",
+    "rimraf": "3.0.2",
     "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.2",
