@@ -59,11 +59,11 @@ const FormTextField = ({
 				const labelId = `${name}-label-placeholder`;
 				return (
 					<FormControl
+						{...renderPropsRest}
 						error={meta.error && meta.touched}
 						variant={variant}
 						style={style}
 						disabled={disabled}
-						{...renderPropsRest}
 					>
 						<InputLabel shrink={native} id={labelId}>
 							{label}

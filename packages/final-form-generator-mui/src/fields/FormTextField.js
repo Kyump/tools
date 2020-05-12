@@ -43,6 +43,7 @@ const FormTextField = ({
 	<Field name={name} type={type} label={label} parse={parsers(type)}>
 		{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => (
 			<TextField
+				{...renderPropsRest}
 				inputProps={restInput}
 				error={meta.error && meta.touched}
 				onChange={onChange}
@@ -55,7 +56,6 @@ const FormTextField = ({
 					shrink:
 						['date', 'time', 'datetime-local'].includes(type) || undefined,
 				}}
-				{...renderPropsRest}
 			/>
 		)}
 	</Field>

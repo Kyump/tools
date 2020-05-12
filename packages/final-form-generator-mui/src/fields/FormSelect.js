@@ -39,10 +39,10 @@ const FormSelect = ({
 		<Field name={name} label={label}>
 			{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => (
 				<FormControl
+					{...renderPropsRest}
 					error={meta.error && meta.touched}
 					variant={variant}
 					disabled={disabled}
-					{...renderPropsRest}
 				>
 					<InputLabel htmlFor={name} id={name}>
 						{label}
