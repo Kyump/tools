@@ -43,9 +43,8 @@ const FormTextField = ({
 	disabled,
 	variant = 'outlined',
 }: PropsType) => {
-	const {inputLabel, InputComponent, renderOption} = useSelect({
+	const {renderOption} = useSelect({
 		native,
-		variant,
 		renderMuiOption: renderMuiCheckedOption,
 		renderNativeOption,
 	});
@@ -57,6 +56,7 @@ const FormTextField = ({
 					renderOption,
 					value,
 				);
+				const labelId = `${name}-label-placeholder`;
 				return (
 					<FormControl
 						error={meta.error && meta.touched}
@@ -65,11 +65,7 @@ const FormTextField = ({
 						disabled={disabled}
 						{...renderPropsRest}
 					>
-						<InputLabel
-							shrink={native}
-							ref={inputLabel}
-							htmlFor={`${name}-label-placeholder`}
-						>
+						<InputLabel shrink={native} id={labelId}>
 							{label}
 						</InputLabel>
 						<Select
@@ -77,13 +73,9 @@ const FormTextField = ({
 							native={native}
 							value={value || []}
 							onChange={onChange}
-							input={
-								<InputComponent
-									name={name}
-									id={`${name}-label-placeholder`}
-									{...restInput}
-								/>
-							}
+							labelId={labelId}
+							label={label}
+							inputProps={{...restInput, name}}
 							renderValue={selected =>
 								selected
 									.map(selectedValue => valueLabelMap[selectedValue])

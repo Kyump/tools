@@ -30,9 +30,8 @@ const FormSelect = ({
 	disabled,
 	native,
 }: PropsType) => {
-	const {inputLabel, InputComponent, renderOption} = useSelect({
+	const {renderOption} = useSelect({
 		native,
-		variant,
 		renderMuiOption,
 		renderNativeOption,
 	});
@@ -45,14 +44,16 @@ const FormSelect = ({
 					disabled={disabled}
 					{...renderPropsRest}
 				>
-					<InputLabel ref={inputLabel} htmlFor={name}>
+					<InputLabel htmlFor={name} id={name}>
 						{label}
 					</InputLabel>
 					<Select
 						native={native}
 						value={value}
 						onChange={onChange}
-						input={<InputComponent name={name} id={name} {...restInput} />}
+						labelId={name}
+						label={label}
+						inputProps={{...restInput, id: name, name}}
 					>
 						{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
 						{native ? <option value="" /> : <MenuItem value="" />}
