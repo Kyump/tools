@@ -1,6 +1,6 @@
 {
 	"name": "@kyump/final-form-generator-mui",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "use of final-form-generator with mui",
 	"homepage": "https://github.com/Kyump/tools/tree/master/packages/final-form-generator-mui",
 	"main": "dist/final-form-generator-mui.cjs.js",
@@ -40,7 +40,7 @@
 		"yup": "^0.28.0"
 	},
 	"devDependencies": {
-		"@kyump/final-form-generator": "^1.1.0",
+		"@kyump/final-form-generator": "^1.1.1",
 		"@material-ui/core": "^4.0.0",
 		"@material-ui/icons": "^4.0.0",
 		"@material-ui/styles": "^4.0.0",
