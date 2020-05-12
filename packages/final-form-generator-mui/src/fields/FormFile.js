@@ -9,11 +9,12 @@ import {makeStyles} from '@material-ui/styles';
 import type {VariantType} from '../types';
 
 const useStyles = makeStyles(theme => ({
-	formControl: {
-		margin: theme.spacing(1),
+	label: {
+		height: '100%',
 	},
-	group: {
-		margin: theme.spacing(1, 0),
+	button: {
+		width: '100%',
+		height: '100%',
 	},
 	imgPreview: {
 		width: '100%',
@@ -50,17 +51,12 @@ const FormFile = ({
 	disabled,
 	...props
 }: PropsType) => (
-	<Field type="file" {...props}>
+	<Field {...props} type="file">
 		{({input: {name, value, onChange, ...restInput}, meta, ...rest}) => {
 			const classes = useStyles({value});
 			const id = `${name}-file`;
 			return (
-				<FormControl
-					component="fieldset"
-					className={classes.formControl}
-					error={meta.error && meta.touched}
-					{...rest}
-				>
+				<FormControl {...rest} fullWidth error={meta.error && meta.touched}>
 					<input
 						{...restInput}
 						onChange={({
@@ -76,11 +72,16 @@ const FormFile = ({
 						name={name}
 						type="file"
 					/>
-					<label htmlFor={id}>
+					<label className={classes.label} htmlFor={id}>
 						{withPreview && value && (
 							<ImagePreview classes={classes} label={label} value={value} />
 						)}
-						<Button variant={variant} disabled={disabled} component="span">
+						<Button
+							variant={variant}
+							disabled={disabled}
+							className={classes.button}
+							component="span"
+						>
 							{value ? value.name : label}
 							<CloudUploadIcon className={classes.rightIcon} />
 						</Button>

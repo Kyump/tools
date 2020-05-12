@@ -42,7 +42,7 @@ export const useStyles = makeStyles(theme => ({
 	submit: {
 		justifySelf: 'end',
 		alignSelf: 'end',
-		gridColumnEnd: ({columns}: PropsType) => (columns || 1) + 1,
+		gridColumnEnd: -1,
 	},
 }));
 

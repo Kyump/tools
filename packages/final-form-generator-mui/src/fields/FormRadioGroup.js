@@ -48,9 +48,9 @@ const FormRadioGroup = ({
 				...rest
 			}) => (
 				<FormControl
+					{...rest}
 					component="fieldset"
 					className={classes.formControl}
-					{...rest}
 					error={meta.error && meta.touched}
 					disabled={disabled}
 					style={style}

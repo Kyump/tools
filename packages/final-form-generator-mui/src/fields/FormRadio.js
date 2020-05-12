@@ -13,7 +13,7 @@ type PropsType = {
 };
 
 const FormRadio = ({label, type, disabled, ...props}: PropsType) => (
-	<Field type="radio" {...props}>
+	<Field {...props} type="radio">
 		{({
 			input: {checked, value, name, onChange, ...restInput},
 			meta: {initial},
@@ -22,6 +22,7 @@ const FormRadio = ({label, type, disabled, ...props}: PropsType) => (
 			<FormControlLabel
 				control={
 					<Radio
+						{...rest}
 						value={value}
 						name={name}
 						color="primary"
@@ -29,7 +30,6 @@ const FormRadio = ({label, type, disabled, ...props}: PropsType) => (
 						inputProps={restInput}
 						checked={initial}
 						disabled={disabled}
-						{...rest}
 					/>
 				}
 				label={label}
