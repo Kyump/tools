@@ -8,9 +8,9 @@ import type {VariantType} from '../types';
 const parsers = (type: string) => {
 	switch (type) {
 		case 'number':
-			return value => Number(value);
+			return value => (value ? Number(value) : null);
 		case 'email':
-			return value => value.trim().toLowerCase();
+			return value => (value ? value.trim().toLowerCase() : null);
 		default:
 			return value => value;
 	}
