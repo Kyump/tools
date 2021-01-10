@@ -37,7 +37,7 @@
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-final-form": "^6.0.0",
-		"yup": "^0.29.0"
+		"yup": "^0.32.8"
 	},
 	"devDependencies": {
 		"@kyump/final-form-generator": "^1.1.1",
@@ -49,7 +49,7 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-final-form": "^6.4.0",
-		"yup": "^0.29.0"
+		"yup": "^0.32.8"
 	},
 	"publishConfig": {
 		"access": "public"
