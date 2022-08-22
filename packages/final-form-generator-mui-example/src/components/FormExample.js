@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import * as Yup from 'yup';
-import FinalFormGenerator from '@kyump/final-form-generator-mui';
+import FinalFormGenerator from '@capcar/final-form-generator-mui';
 import Paper from '@material-ui/core/Paper';
 
 type PropsType = {columns: number};

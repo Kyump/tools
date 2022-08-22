@@ -1,5 +1,5 @@
 // @flow
-import useFormGenerator from '@kyump/final-form-generator';
+import useFormGenerator from '@capcar/final-form-generator';
 
 import type {UseMuiFinalFormGeneratorPropsType} from './types';
 import {defaultValidation, renderInput} from './fields/utils';
