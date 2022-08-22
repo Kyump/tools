@@ -2,7 +2,7 @@
 import type {
 	BasicContainerType,
 	BasicInputType,
-} from '@kyump/final-form-generator/src/types';
+} from '@capcar/final-form-generator/src/types';
 
 //
 // Start of common types

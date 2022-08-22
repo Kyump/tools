@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import useFormGenerator from '@kyump/final-form-generator';
+import useFormGenerator from '@capcar/final-form-generator';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {defaultValidation, renderInput} from './fields/utils';

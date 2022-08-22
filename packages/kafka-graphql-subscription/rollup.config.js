@@ -6,7 +6,7 @@ import {
 
 import pkg from './package.json';
 
-const name = pkg.name.replace(/^@kyump\//, '');
+const name = pkg.name.replace(/^@capcar\//, '');
 
 export default generateConfig({
 	name,

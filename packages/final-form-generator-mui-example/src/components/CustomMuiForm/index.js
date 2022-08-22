@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
 import stringHash from 'string-hash';
-import type {MuiFormPropsType} from '@kyump/final-form-generator-mui/src/types';
+import type {MuiFormPropsType} from '@capcar/final-form-generator-mui/src/types';
 import {
 	FormComponent,
 	useMuiFormGenerator,
-} from '@kyump/final-form-generator-mui';
+} from '@capcar/final-form-generator-mui';
 
 import type {CustomFieldType} from './types';
 import FormCustom from './fields/FormCustom';

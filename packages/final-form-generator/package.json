@@ -1,5 +1,5 @@
 {
-	"name": "@kyump/final-form-generator",
+	"name": "@capcar/final-form-generator",
 	"version": "1.1.1",
 	"description": "tool used to build form with react final form",
 	"homepage": "https://github.com/Kyump/tools/tree/master/packages/final-form-generator",
