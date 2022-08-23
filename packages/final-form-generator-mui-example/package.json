@@ -1,6 +1,6 @@
 {
 	"name": "@capcar/final-form-generator-mui-example",
-	"version": "1.1.2",
+	"version": "1.1.3",
 	"description": "",
 	"main": "index.js",
 	"private": true,
@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@capcar/final-form-generator": "^1.1.1",
-		"@capcar/final-form-generator-mui": "^1.1.2"
+		"@capcar/final-form-generator-mui": "^1.1.3"
 	},
 	"resolutions": {
 		"**/react": "16.7.0-alpha.2",
