@@ -9,12 +9,8 @@ import {makeStyles} from '@material-ui/styles';
 import type {VariantType} from '../types';
 
 const useStyles = makeStyles(theme => ({
-	label: {
-		height: '100%',
-	},
 	button: {
 		width: '100%',
-		height: '100%',
 	},
 	imgPreview: {
 		width: '100%',
@@ -72,12 +68,10 @@ const FormFile = ({
 						name={name}
 						type="file"
 					/>
-					<label className={value ? classes.label : ''} htmlFor={id}>
+					<label htmlFor={id}>
 						{withPreview && value && (
 							<ImagePreview classes={classes} label={label} value={value} />
 						)}
-					</label>
-					<label className={classes.label} htmlFor={id}>
 						<Button
 							variant={variant}
 							disabled={disabled}
