@@ -42,7 +42,6 @@ type PropsType = {
 	variant?: VariantType,
 	disabled?: boolean,
 	withPreview?: boolean,
-	buttonClassName?: string,
 };
 
 const FormFile = ({
@@ -50,7 +49,6 @@ const FormFile = ({
 	variant = 'outlined',
 	withPreview,
 	disabled,
-	buttonClassName,
 	...props
 }: PropsType) => (
 	<Field {...props} type="file">
@@ -83,7 +81,7 @@ const FormFile = ({
 						<Button
 							variant={variant}
 							disabled={disabled}
-							className={`${classes.button} ${buttonClassName}`}
+							className={classes.button}
 							component="span"
 						>
 							{value ? value.name : label}
