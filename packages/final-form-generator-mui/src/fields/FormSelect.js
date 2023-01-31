@@ -29,6 +29,7 @@ const FormSelect = ({
 	name,
 	disabled,
 	native,
+	...rest
 }: PropsType) => {
 	const {renderOption} = useSelect({
 		native,
@@ -36,7 +37,7 @@ const FormSelect = ({
 		renderNativeOption,
 	});
 	return (
-		<Field name={name} label={label}>
+		<Field {...rest} name={name} label={label}>
 			{({input: {onChange, value, ...restInput}, meta, ...renderPropsRest}) => (
 				<FormControl
 					{...renderPropsRest}
